@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
-import { ArrowUpRight, ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, ChevronLeft, ChevronRight, Expand, Mail, X } from 'lucide-react';
 import { customerLetters } from '@/lib/customer-letters';
 
 export function CustomerLetters() {
@@ -44,27 +44,42 @@ export function CustomerLetters() {
     <div className="customer-letters">
       <div className="customer-letters-heading">
         <h3>Letters from our families</h3>
-        <span>{customerLetters.length} letters of appreciation</span>
+        <span className="customer-letters-count"><Mail size={16} aria-hidden="true" /> {customerLetters.length} heartfelt letters</span>
       </div>
       <div className="customer-letter-grid" id="customer-letter-grid">
         {visibleLetters.map((letter, index) => (
-          <button
-            className="customer-letter-card"
-            key={letter.id}
-            type="button"
-            aria-label={`Read ${letter.title.toLowerCase()}`}
-            aria-haspopup="dialog"
-            onClick={() => setActiveIndex(index)}
-          >
-            <span className="customer-letter-thumbnail">
-              <Image src={letter.thumbnail} alt="" width={letter.width} height={letter.height} sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw" />
-              <span className="customer-letter-expand" aria-hidden="true"><Expand size={18} /></span>
-            </span>
-            <span className="customer-letter-caption"><span>{letter.title}</span><ArrowUpRight size={17} aria-hidden="true" /></span>
-          </button>
+          <article className="customer-letter-card" key={letter.id}>
+            <button
+              className="customer-letter-thumbnail"
+              type="button"
+              aria-label={`Open original letter from ${letter.author}`}
+              aria-haspopup="dialog"
+              onClick={() => setActiveIndex(index)}
+            >
+              <Image src={letter.thumbnail} alt="" width={letter.width} height={letter.height} sizes="(max-width: 560px) 88px, 180px" />
+              <span className="customer-letter-expand" aria-hidden="true"><Expand size={16} /></span>
+            </button>
+            <div className="customer-letter-content">
+              <span className="customer-letter-kind">{letter.kind}</span>
+              <figure>
+                <blockquote><p>“{letter.excerpt}”</p></blockquote>
+                <figcaption>{letter.author}</figcaption>
+              </figure>
+              <button
+                className="customer-letter-read"
+                type="button"
+                aria-label={`Read full letter from ${letter.author}`}
+                aria-haspopup="dialog"
+                onClick={() => setActiveIndex(index)}
+              >
+                Read full letter <ArrowUpRight size={16} aria-hidden="true" />
+              </button>
+            </div>
+          </article>
         ))}
       </div>
       <div className="customer-letters-actions">
+        <p aria-live="polite">Showing {visibleLetters.length} of {customerLetters.length} letters</p>
         <button
           type="button"
           className="button button-secondary"
@@ -73,6 +88,7 @@ export function CustomerLetters() {
           onClick={() => setExpanded(value => !value)}
         >
           {expanded ? 'Show fewer letters' : `View all ${customerLetters.length} letters`}
+          <ChevronDown size={18} className={expanded ? 'letters-chevron letters-chevron-up' : 'letters-chevron'} aria-hidden="true" />
         </button>
       </div>
       <dialog
@@ -88,11 +104,12 @@ export function CustomerLetters() {
             <div className="customer-letter-toolbar">
               <div aria-live="polite">
                 <h3 id="customer-letter-title">{activeLetter.title}</h3>
-                <p>{(activeIndex ?? 0) + 1} of {customerLetters.length}</p>
+                <p>{activeLetter.kind} · {(activeIndex ?? 0) + 1} of {customerLetters.length}</p>
               </div>
               <button type="button" className="letter-control" aria-label="Close letter" autoFocus onClick={() => setActiveIndex(null)}><X size={22} /></button>
             </div>
             <div className="customer-letter-document" ref={documentRef} tabIndex={0} role="region" aria-label="Letter image, scroll to read">
+              <blockquote className="customer-letter-viewer-excerpt">“{activeLetter.excerpt}”</blockquote>
               <Image key={activeLetter.id} src={activeLetter.src} alt={`${activeLetter.title}: an original customer letter shared with Sisi Care`} width={activeLetter.width} height={activeLetter.height} sizes="(max-width: 760px) 90vw, 800px" loading="eager" />
             </div>
             <div className="customer-letter-navigation">
