@@ -1,4 +1,4 @@
-import { HeartHandshake, Heart, CookingPot, House, Pill, Accessibility } from 'lucide-react';
+import { HeartHandshake, Heart, CookingPot, House, Pill, Accessibility, UserRound, Car } from 'lucide-react';
 
 export const contact = {
   phone: '(206) 334-3505', tel: '+12063343505', email: 'info@sisicares.com',
@@ -12,6 +12,65 @@ export const services = [
   { id: 'home-help', title: 'Help around home', description: 'A clean, comfortable space that keeps home feeling like home.', icon: House, details: ['Light housekeeping', 'Laundry and ironing', 'Organizing everyday spaces', 'Help with plants and pets'] },
   { id: 'medication-reminders', title: 'Medication reminders', description: 'Gentle reminders and everyday support for a reassuring routine.', icon: Pill, details: ['Non-medical medication reminders', 'Support with daily routines', 'Appointment reminders', 'Companionship and supervision'] },
   { id: 'mobility-support', title: 'Mobility support', description: 'Patient assistance to move through the day with more confidence.', icon: Accessibility, details: ['Walking and transfer assistance', 'Support getting around the home', 'Help attending appointments', 'Assistance with everyday activities'] },
+];
+// Detailed service groups from the supplied In-Home Care page reference.
+export const inHomeCareServices = [
+  {
+    id: 'personal-care',
+    title: 'Personal Care',
+    icon: UserRound,
+    aliases: [],
+    details: [
+      'Bathing, toileting, dressing',
+      'Personal hygiene',
+      'Routine skin care',
+      'Transfers and mobility help',
+      'Personal comfort and dignity',
+    ],
+  },
+  {
+    id: 'home-help',
+    title: 'Home Helper Services',
+    icon: House,
+    aliases: ['meal-preparation'],
+    details: [
+      'Light housekeeping',
+      'Laundry and ironing',
+      'Plan and prepare meals',
+      'Monitor diet and eating',
+      'Care for houseplants',
+      'Organize and clean closets',
+      'Assist with pet care',
+    ],
+  },
+  {
+    id: 'activity-support',
+    title: 'Activity Support',
+    icon: Car,
+    aliases: [],
+    details: [
+      'Arrange appointments',
+      'Assist with entertaining',
+      'Medical appointment trips',
+      'Errands and shopping',
+      'Trip to social events',
+      'Physical therapy exercise assistance',
+    ],
+  },
+  {
+    id: 'health-safety-support',
+    title: 'Health & Safety Support',
+    icon: Pill,
+    aliases: ['medication-reminders', 'mobility-support', 'companion-care'],
+    details: [
+      'Medication reminders',
+      'Help with daily routines',
+      'Monitor diet and nutrition',
+      'Fall prevention',
+      'Mobility assistance',
+      'Companionship and supervision',
+    ],
+  },
 ];
 export const testimonials = [
   { quote: 'Tsegi gave loving, attentive and professional care to my parents for over ten years. She attended to their every need graciously and happily.', name: 'Robert H. Campbell', context: 'A letter from a grateful family', initials: 'RC' },

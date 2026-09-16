@@ -1,12 +1,31 @@
 import type { Metadata } from 'next';
 import { Brain, Clock3, Check, CalendarDays, Sun, Moon, HeartHandshake } from 'lucide-react';
 import { PageIntro, Eyebrow, CareCTA, ServiceArea, TrustStrip } from '@/components/shared';
-import { services } from '@/lib/content';
+import { inHomeCareServices } from '@/lib/content';
 export const metadata: Metadata = { title: 'In-Home Care', description: 'Personal care, companionship, meal preparation, memory support and flexible in-home care for seniors and adults in Bellevue and the Eastside.' };
 export default function InHomeCare() { return <>
   <PageIntro eyebrow="CARE THAT FITS YOUR LIFE" title="A helping hand." emphasis="Right where you belong." description="Personalized, non-medical care that helps seniors and adults feel safe, comfortable, and independent in the place they know best—home." />
   <TrustStrip />
-  <section className="section"><div className="container"><div className="section-heading"><div><Eyebrow>EVERYDAY SUPPORT, YOUR WAY</Eyebrow><h2>Little things.<br /><em>A meaningful difference.</em></h2></div><div className="heading-aside"><p>Every person is different. We’ll build the right combination of support around your needs, preferences, and routines.</p></div></div><div className="care-detail-grid">{services.map(({id,title,description,icon:Icon,details}) => <article className="care-detail" id={id} key={id}><Icon size={31} strokeWidth={1.3}/><h3>{title}</h3><p>{description}</p><ul className="check-list">{details.map(d => <li key={d}><Check />{d}</li>)}</ul></article>)}</div></div></section>
+  <section className="section" aria-labelledby="care-services-heading">
+    <div className="container">
+      <div className="care-services-heading">
+        <h2 id="care-services-heading">Our In-Home Care Services</h2>
+        <p>A wide range of non-medical home care services tailored to each person’s unique needs and lifestyle.</p>
+      </div>
+      <div className="care-detail-grid">
+        {inHomeCareServices.map(({ id, title, icon: Icon, aliases, details }) => (
+          <article className="care-detail" id={id} key={id}>
+            {aliases.map(alias => <span className="care-anchor" id={alias} key={alias} aria-hidden="true" />)}
+            <span className="care-service-icon"><Icon size={31} strokeWidth={1.5} aria-hidden="true" /></span>
+            <h3>{title}</h3>
+            <ul className="check-list">
+              {details.map(detail => <li key={detail}><Check aria-hidden="true" />{detail}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
   <section className="section specialist-section"><div className="container specialist-grid"><article><span className="round-icon"><Brain size={30} strokeWidth={1.4}/></span><Eyebrow>FAMILIAR FACES. FAMILIAR ROUTINES.</Eyebrow><h2>Dementia &<br /><em>memory support.</em></h2><p>Patient, consistent non-medical support for people living with Alzheimer’s, dementia, or other memory challenges. We help maintain familiar routines and offer companionship, supervision, and respite for family caregivers.</p></article><article><span className="round-icon"><Clock3 size={30} strokeWidth={1.4}/></span><Eyebrow>SUPPORT, DAY AND NIGHT</Eyebrow><h2>Around-the-clock care.<br /><em>Everyday reassurance.</em></h2><p>For individuals who need ongoing support, 24-hour care brings a reassuring presence throughout the day and night. Caregivers work in shifts to provide consistent assistance, comfort, and companionship.</p></article></div></section>
   <section className="section"><div className="container"><div className="center-heading"><Eyebrow>ROOM FOR LIFE TO CHANGE</Eyebrow><h2>Your schedule.<br /><em>Your kind of care.</em></h2></div><div className="options-grid">{[{icon:Sun,title:'A few hours',text:'Occasional help and a little extra support when you need it.'},{icon:CalendarDays,title:'Ongoing care',text:'A familiar, dependable routine with regular weekly care.'},{icon:Moon,title:'Extended care',text:'More time together, including evenings and weekends.'},{icon:HeartHandshake,title:'24-hour care',text:'Day and night support from caregivers working in shifts.'}].map(({icon:Icon,title,text}) => <article key={title}><Icon size={28} strokeWidth={1.4}/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
   <ServiceArea /><CareCTA />
