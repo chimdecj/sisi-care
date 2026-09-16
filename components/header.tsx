@@ -15,7 +15,7 @@ export function Header() {
     <div className="topbar"><div className="container flex items-center justify-between gap-4"><span className="flex items-center gap-2"><MapPin size={13} /> Proudly serving Bellevue & the Eastside</span><a href={`tel:${contact.tel}`} className="flex items-center gap-2">Let’s talk about care <ArrowUpRight size={13} /></a></div></div>
     <div className="container nav-inner">
       <Link href="/" className="brand" aria-label="Sisi Care home" onClick={() => setOpen(false)}><Image src="/images/sisi-care-logo.png" width={99} height={78} priority alt="Sisi Care" /><span className="brand-rule" /><span className="brand-tagline">A brighter<br />tomorrow at home.</span></Link>
-      <nav className="desktop-nav" aria-label="Main navigation">{links.map(([href, label]) => <Link key={href} className={path.replace(/\/$/, '') === href.replace(/\/$/, '') ? 'active' : ''} href={href}>{label}</Link>)}</nav>
+      <nav className="desktop-nav" aria-label="Main navigation">{links.map(([href, label]) => <Link key={href} aria-current={path.replace(/\/$/, '') === href.replace(/\/$/, '') ? 'page' : undefined} className={path.replace(/\/$/, '') === href.replace(/\/$/, '') ? 'active' : ''} href={href}>{label}</Link>)}</nav>
       <a className="nav-phone" href={`tel:${contact.tel}`}><Phone size={16} />{contact.phone}</a>
       <button ref={toggle} className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-nav">{open ? <X /> : <Menu />}</button>
     </div>

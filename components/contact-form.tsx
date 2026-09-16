@@ -15,7 +15,7 @@ export function ContactForm() {
   requestAnimationFrame(()=>resultRef.current?.focus());
  }
  async function copy() { if(!draft)return; try { await navigator.clipboard.writeText(draft.body); setCopyState('Message copied'); } catch { setCopyState('Please select and copy the message below'); } }
- return <form className="contact-form" onSubmit={prepare}><h2>Let’s get to know<br /><em>what you need.</em></h2><p className="form-intro">Share a few details, then send your request by email.</p>
+ return <form className="contact-form" onSubmit={prepare} onChange={() => { if (draft) setDraft(null); }}><h2>Let’s get to know<br /><em>what you need.</em></h2><p className="form-intro">Share a few details, then send your request by email.</p>
  <div className="field"><label htmlFor="name">Your name <span>*</span></label><input id="name" name="name" autoComplete="name" placeholder="First and last name" required maxLength={100}/></div>
  <div className="form-row"><div className="field"><label htmlFor="phone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="(206) 555-0123" required minLength={7} maxLength={30}/></div><div className="field"><label htmlFor="email">Email address <span>*</span></label><input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={150}/></div></div>
  <fieldset><legend>Who needs care?</legend><div className="choice-row">{['Myself','Parent','Spouse','Other loved one'].map((s,i)=><label className="choice" key={s}><input type="radio" name="who" value={s} defaultChecked={i===1}/><span>{s}</span></label>)}</div></fieldset>

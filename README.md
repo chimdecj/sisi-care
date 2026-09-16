@@ -28,3 +28,5 @@ Business information is transcribed from the supplied page references. Testimoni
 Editable shared content and contact details: `lib/content.ts`. Shared styles: `app/globals.css`. Pages and components are in `app/` and `components/`.
 
 Original supplied materials remain in place. Only selected web assets in `public/` ship with the website; original customer letters and their signatures are not publicly served.
+
+Hero asset: `public/images/care-at-home.webp`, generated using the built-in image tool and optimized for the web. Prompt: “A warm candid interaction between a smiling mature East Asian female caregiver in navy scrubs and an elderly East Asian woman in a soft pink cardigan, seated in a bright residential living room, gently holding hands and sharing mutual eye contact. Polished natural editorial photography, vertical composition showing both faces and hands, soft daylight, warm white setting with subtle greenery. No text, logos, UI, borders, or watermarks.”
