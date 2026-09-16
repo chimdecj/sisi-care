@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.sites-runtime/
+.env*
+!.env.example
+.DS_Store
+*.tsbuildinfo
+# Supplied reference materials stay local; selected web assets are in public/.
+/customer/
+/pages/
+/owner.jpeg
+/*.docx

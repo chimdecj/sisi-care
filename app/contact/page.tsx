@@ -1,0 +1,11 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Phone, MapPin, Clock3, Mail, ArrowUpRight, Heart } from 'lucide-react';
+import { PageIntro, Eyebrow } from '@/components/shared';
+import { ContactForm } from '@/components/contact-form';
+import { contact, areas } from '@/lib/content';
+export const metadata: Metadata = { title: 'Contact Us', description: 'Let’s talk about your family’s care needs. Call Sisi Care at (206) 334-3505 or prepare a free consultation request. Serving Bellevue and the Eastside.' };
+export default function Contact() { return <>
+ <PageIntro eyebrow="WE’RE HERE TO LISTEN" title="You don’t have to" emphasis="figure it out alone." description="Whether you need a few hours of support or around-the-clock care, we’ll help you take the next step. Let’s start with a conversation."/>
+ <section className="section"><div className="container contact-layout"><ContactForm/><aside className="contact-aside"><div className="contact-card"><Eyebrow>A FRIENDLY VOICE IS A CALL AWAY</Eyebrow><h2>Prefer to talk?</h2><p>We’re happy to listen, answer your questions, and explore your options together.</p><a href={`tel:${contact.tel}`} className="contact-big-phone"><Phone size={25}/>{contact.phone}</a><div className="contact-detail"><Mail/><div><strong>Email us</strong><a href={`mailto:${contact.email}`}>{contact.email}</a></div></div><div className="contact-detail"><MapPin/><div><strong>Our office</strong><a href={contact.maps} target="_blank" rel="noreferrer">{contact.address}<br/>{contact.city}<span className="directions">Get directions <ArrowUpRight size={13}/></span></a></div></div><div className="contact-detail"><Clock3/><div><strong>Office hours</strong><p>Monday – Friday<br/>9:00 AM – 5:00 PM</p></div></div></div><div className="contact-area"><MapPin size={25} strokeWidth={1.4}/><h3>Local care.<br/>A stronger community.</h3><p>Serving families in {areas.slice(0,-1).join(', ')}, {areas[areas.length-1]}, and surrounding areas.</p></div><div className="careers-callout"><Heart size={22}/><div><h3>Have a heart for caring?</h3><p>We’d love to get to know you.</p><Link href="/careers/" className="text-link">Explore careers <ArrowUpRight size={16}/></Link></div></div></aside></div></section>
+ </>;}
