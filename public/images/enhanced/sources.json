@@ -1,0 +1,87 @@
+{
+  "hero-home": {
+    "src": "/images/enhanced/hero-home.webp",
+    "width": 1506,
+    "height": 1026
+  },
+  "hero-about": {
+    "src": "/images/enhanced/hero-about.webp",
+    "width": 1587,
+    "height": 987
+  },
+  "hero-careers": {
+    "src": "/images/enhanced/hero-careers-brand.webp",
+    "width": 1530,
+    "height": 1080
+  },
+  "hero-contact": {
+    "src": "/images/enhanced/hero-contact.webp",
+    "width": 1611,
+    "height": 951
+  },
+  "home-hands": {
+    "src": "/images/enhanced/home-hands.webp",
+    "width": 1464,
+    "height": 732
+  },
+  "memory-care": {
+    "src": "/images/enhanced/memory-care.webp",
+    "width": 1524,
+    "height": 832
+  },
+  "care-hands": {
+    "src": "/images/enhanced/care-hands.webp",
+    "width": 672,
+    "height": 1020
+  },
+  "career-connection": {
+    "src": "/images/enhanced/career-connection-brand.webp",
+    "width": 942,
+    "height": 648
+  },
+  "career-independence": {
+    "src": "/images/enhanced/career-independence-brand.webp",
+    "width": 954,
+    "height": 648
+  },
+  "career-joy": {
+    "src": "/images/enhanced/career-joy-brand.webp",
+    "width": 954,
+    "height": 648
+  },
+  "caregiver-portrait": {
+    "src": "/images/enhanced/caregiver-portrait-brand.webp",
+    "width": 792,
+    "height": 924
+  },
+  "career-handwriting": {
+    "src": "/images/enhanced/career-handwriting.webp",
+    "width": 768,
+    "height": 756
+  },
+  "about-handwriting": {
+    "src": "/images/enhanced/about-handwriting.webp",
+    "width": 1192,
+    "height": 372
+  },
+  "career-voice-handwriting": {
+    "src": "/images/enhanced/career-voice-handwriting.webp",
+    "width": 588,
+    "height": 726
+  },
+  "career-together": {
+    "src": "/images/enhanced/career-together.webp",
+    "width": 990,
+    "height": 570
+  },
+  "contact-handwriting": {
+    "src": "/images/enhanced/contact-handwriting.webp",
+    "width": 858,
+    "height": 564
+  },
+  "contact-careers": {
+    "src": "/images/enhanced/contact-careers.webp",
+    "width": 1812,
+    "height": 792
+  }
+}

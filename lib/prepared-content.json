@@ -1,0 +1,330 @@
+{
+  "common": {
+    "brandTagline": "In-Home Care • A Brighter Tomorrow at Home",
+    "consultation": "Get a Free Care Consultation",
+    "careMotto": "Caring People. Brighter Days.",
+    "connectionMotto": "More Than Care. Real People. Real Connections.",
+    "communityMotto": "Caring People. Stronger Communities.",
+    "togetherMotto": "Stronger Communities Together.",
+    "areaHeading": "Proudly Serving Bellevue & the Eastside",
+    "areaNames": "Bellevue | Kirkland | Redmond | Sammamish | Issaquah",
+    "surrounding": "and surrounding areas",
+    "localMotto": "Local Care. Stronger Communities."
+  },
+  "home": {
+    "eyebrow": "IN-HOME CARE IN BELLEVUE & THE EASTSIDE",
+    "title": "Trusted In-Home Care for Over 12 Years",
+    "description": "Personalized, dependable in-home care that helps seniors and adults live safely, comfortably, and independently in the place they know best — home.",
+    "call": "Call Us",
+    "imageCaption": "More Than Care. Real People.",
+    "trust": [
+      ["12+ Years", "Serving Local Families"],
+      ["20+ Years", "of Care Experience"],
+      ["Locally Owned", "and Community-Focused"]
+    ],
+    "servicesTitle": "Our In-Home Care Services",
+    "servicesDescription": "Compassionate support tailored to each person’s unique needs.",
+    "services": [
+      ["Personal Care", "Bathing, dressing, grooming, toileting"],
+      ["Companion Care", "Meaningful companionship and social support"],
+      ["Meal Preparation", "Nutritious meals and special diet support"],
+      ["Light Housekeeping", "A clean and comfortable home environment"],
+      ["Medication Reminders", "Stay on track and safe at home"],
+      ["Mobility Assistance", "Help with safe movement and daily activities"]
+    ],
+    "whyTitle": "Why Families Choose Sisi Care",
+    "why": [
+      "12+ years serving local families in Bellevue & the Eastside",
+      "20+ years of hands-on care experience",
+      "Compassionate, carefully screened caregivers",
+      "Personalized care plans that fit your family’s needs",
+      "Flexible care options (hourly to live-in)",
+      "Locally owned and community-focused"
+    ],
+    "storyMotto": "Trusted Care. Brighter Tomorrows.",
+    "mission": "Our mission is to provide compassionate, non-medical care that enhances the safety, independence, and quality of life for every individual we serve.",
+    "missionAuthor": "Sisi Care",
+    "testimonialsTitle": "What Families Say About Sisi Care",
+    "testimonialsDescription": "Real stories from the people and families we’re honored to serve.",
+    "testimonialsLink": "View All Testimonials",
+    "testimonials": [
+      {
+        "quote": "The caregiver was kind, reliable, and truly cared about my mom. We are so grateful for Sisi Care.",
+        "name": "Mary D.",
+        "context": "Bellevue"
+      },
+      {
+        "quote": "Tsegi gave loving, attentive and professional care to my parents for over ten years. She was meticulous in her attention to detail.",
+        "name": "Robert H. Campbell",
+        "context": ""
+      },
+      {
+        "quote": "You made our lives happier and easier because we trusted your care completely.",
+        "name": "Susan",
+        "context": ""
+      },
+      {
+        "quote": "Our parents were fortunate to work with Amy and Mina. They were so incredibly caring and patient.",
+        "name": "Nancy Thomas Uhrich",
+        "context": ""
+      },
+      {
+        "quote": "Sisi Care treated my mother like family. Their kindness, patience, and support gave our family peace of mind.",
+        "name": "Family Member",
+        "context": "Bellevue"
+      }
+    ],
+    "stepsTitle": "Getting Started Is Simple",
+    "stepsDescription": "A clear process, from your first call to the right care at home.",
+    "steps": [
+      ["Talk With Us", "Call or fill out our form to tell us about your needs."],
+      [
+        "Free Care Consultation",
+        "We’ll discuss your situation and answer your questions at no cost."
+      ],
+      ["Personalized Care Plan", "We create a care plan tailored to your loved one."],
+      ["Meet Your Caregiver", "We carefully match you with a trusted, compassionate caregiver."]
+    ],
+    "ctaTitle": "Let’s Talk About In-Home Care",
+    "ctaDescription": "Contact us today for a free, no-obligation care consultation."
+  },
+  "care": {
+    "eyebrow": "IN-HOME CARE IN BELLEVUE & THE EASTSIDE",
+    "title": "Compassionate Care Right at Home",
+    "description": "Personalized, non-medical in-home care for seniors and adults so they can live safely, comfortably, and independently — in the place they love most: home.",
+    "trust": [
+      ["Stay at Home", "Where life feels right"],
+      ["12+ Years", "of Hands-On Experience"],
+      ["Locally Owned", "and Trusted"],
+      ["State Licensed,", "Insured & Bonded"]
+    ],
+    "servicesTitle": "Our In-Home Care Services",
+    "servicesDescription": "A wide range of non-medical home care services tailored to each person’s unique needs and lifestyle.",
+    "memoryTitle": "Dementia & Memory Care at Home",
+    "memoryDescription": "Familiar surroundings can make a meaningful difference. Our caregivers provide patient, consistent support for individuals with Alzheimer’s, dementia, and other memory challenges — while giving families peace of mind.",
+    "memoryList": [
+      "Maintain familiar routines",
+      "Reduce confusion and anxiety",
+      "Support safety and independence",
+      "Respite care for family caregivers"
+    ],
+    "memoryMotto": "Familiar Faces. Brighter Days.",
+    "continuousTitle": "24-Hour Care",
+    "continuousSubtitle": "Around-the-Clock Support",
+    "continuousDescription": "For individuals who need continuous care, we provide 24-hour support with caregivers working in shifts to ensure safety, comfort, and consistent care — day and night.",
+    "continuousList": [
+      "Continuous, reliable care",
+      "Support for complex needs",
+      "Peace of mind for families"
+    ],
+    "optionsTitle": "Flexible Care Options",
+    "optionsDescription": "Care that fits your needs and lifestyle.",
+    "options": [
+      [
+        "A Few Hours",
+        "Short-term or occasional support (e.g., a few hours a day, a few days a week)."
+      ],
+      ["Ongoing Care", "Regular weekly care for continued support and consistency."],
+      ["Extended Care", "More hours for greater support, including evenings and weekends."],
+      ["24-Hour Care", "Around-the-clock care with rotating caregivers for continuous support."]
+    ],
+    "helpTitle": "Not Sure What Care You Need?",
+    "helpDescription": "Talk with our care team. We’ll listen to your situation and help you find the right care solution — with no obligation.",
+    "familyTitle": "Is In-Home Care Right for Your Family?",
+    "familyDescription": "In-home care may be a good fit if your loved one:",
+    "familyList": [
+      "Wants to remain independent at home",
+      "Needs help with daily activities (bathing, dressing, meals, etc.)",
+      "Has memory challenges such as Alzheimer’s or dementia",
+      "Is recovering after a hospital stay",
+      "Lives alone or has limited family support nearby",
+      "Needs respite care while family caregivers take a break"
+    ],
+    "quote": "Sisi Care gave our family more than care — they gave us peace of mind. The caregiver is kind, reliable, and truly cares about my mother.",
+    "quoteAuthor": "Family Member, Bellevue",
+    "areaDescription": "We’re proud to support seniors and families across the Eastside with dependable, high-quality in-home care.",
+    "helpButton": "Get a Free Consultation"
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "title": "Care Built on Experience, Trust and Heart",
+    "description": "For over 12 years, Sisi Care has supported seniors and adults across Bellevue and the Eastside — guided by more than 20 years of hands-on care experience and a deep commitment to people.",
+    "storyTitle": "Our Story",
+    "story": [
+      "Sisi Care began with a simple belief — every person deserves to age with dignity, comfort, and kindness in the place they call home.",
+      "With over 20 years of hands-on care experience, our founder saw the need for a more personal and compassionate approach to in-home care. In 2014, Sisi Care was established to bring that vision to life — providing reliable, high-quality care to seniors and families in Bellevue, the Eastside, and surrounding communities.",
+      "Today, we are proud to be a locally owned and trusted home care provider, known for our genuine care, strong relationships, and commitment to making a positive difference in the lives of the people we serve."
+    ],
+    "storyMotto": "It’s an honor to be part of your family’s journey.",
+    "founderName": "Sisi",
+    "founderRole": "Founder & Owner",
+    "founderDetails": [
+      ["20+ Years", "of Hands-On Care Experience"],
+      [
+        "Background in Psychology",
+        "Helps me understand people’s needs and build meaningful relationships."
+      ],
+      ["Passionate About People and Community", "Stronger families, healthier communities."]
+    ],
+    "founderQuote": "Care is not just what we do — it’s who we are.",
+    "founderQuoteAuthor": "Sisi, Founder",
+    "valuesTitle": "Our Values",
+    "valuesDescription": "These values guide everything we do.",
+    "values": [
+      ["Dignity", "We treat every person with respect, kindness, and compassion."],
+      ["Compassion", "We care from the heart, not just as a job, but as a calling."],
+      ["Dependability", "Families can count on us to be there, when it matters most."],
+      [
+        "Personal Connection",
+        "We take time to understand each person’s unique needs, preferences, and story."
+      ]
+    ],
+    "mission": "Our mission is to enhance the lives of seniors and adults by providing compassionate, reliable, and personalized in-home care.",
+    "caregiversTitle": "Our Caregivers",
+    "caregiversDescription": "Our caregivers are the heart of Sisi Care. We carefully select and support a team of dedicated, compassionate professionals who share our commitment to providing excellent care.",
+    "caregiversList": [
+      "Carefully screened and background checked",
+      "Trained and experienced in senior care",
+      "Licensed nursing assistants and home care aides",
+      "Ongoing support and supervision",
+      "A caring team that truly makes a difference"
+    ],
+    "teamMotto": "A Team That Cares Like Family.",
+    "licenseTitle": "State Licensed, Insured & Bonded",
+    "licenseDescription": "Sisi Care is a state-licensed, insured, and bonded home care agency. Our caregivers are licensed nursing assistants and home care aides who have passed background checks.",
+    "trust": [
+      ["20+ Years", "Hands-On Care Experience"],
+      ["12+ Years", "Serving Local Families"],
+      ["Locally Owned", "and Community-Focused"],
+      ["Bellevue & the Eastside", "and Surrounding Areas"]
+    ],
+    "testimonialsTitle": "What Families Say About Us",
+    "testimonialsLink": "Read More Stories",
+    "testimonials": [
+      {
+        "quote": "Sisi Care has been a blessing for our family. The caregiver is kind, reliable, and truly cares about my mother. We are so grateful for their support.",
+        "name": "Client Family, Bellevue",
+        "context": ""
+      },
+      {
+        "quote": "Professional, dependable, and compassionate. They gave us peace of mind knowing our dad is in good hands.",
+        "name": "Family Member, Kirkland",
+        "context": ""
+      },
+      {
+        "quote": "Communication is excellent and the caregivers are wonderful. I highly recommend Sisi Care to anyone looking for in-home care.",
+        "name": "Client Family, Redmond",
+        "context": ""
+      }
+    ],
+    "ctaTitle": "More Than Care. A Relationship You Can Trust.",
+    "ctaDescription": "Let’s talk about how we can support your family."
+  },
+  "careers": {
+    "eyebrow": "CAREERS AT SISI CARE",
+    "title": "Make a Meaningful Difference Every Day",
+    "description": "Join our caring team and help seniors and adults live safely, comfortably, and independently at home. At Sisi Care, you’re more than an employee — you’re part of a family.",
+    "apply": "Apply Now",
+    "positions": "View Open Positions",
+    "trust": [
+      ["Support", "Seniors & Families"],
+      ["Be Part of a", "Caring Team"],
+      ["Grow Your Skills", "and Your Future"]
+    ],
+    "benefits": [
+      ["Meaningful Work", "Make a real difference in someone’s life."],
+      ["Supportive Team", "Work with a kind, respectful, and caring team."],
+      ["Flexible Scheduling", "Schedules that fit your life and availability."],
+      ["Growth Opportunities", "Gain experience and develop your skills."],
+      ["Locally Owned", "Be part of a trusted local company serving Bellevue and the Eastside."]
+    ],
+    "requirementsTitle": "Who We’re Looking For",
+    "requirementsSubtitle": "Compassionate. Dependable. Respectful. Professional.",
+    "requirementsDescription": "We’re looking for caregivers who genuinely enjoy helping others and understand the importance of reliability, dignity, and personal connection.",
+    "requirements": [
+      "Caregiving experience (preferred)",
+      "Required Washington credentials (as applicable)",
+      "Pass a background check",
+      "Reliable transportation (if required)",
+      "Basic English communication skills",
+      "A positive attitude and a caring heart"
+    ],
+    "caregiverMotto": "Good Caregivers Change Lives.",
+    "dutiesTitle": "What Caregivers Do",
+    "dutiesDescription": "Support clients with a variety of non-medical care needs, depending on each person’s care plan.",
+    "duties": [
+      ["Personal Care", "Bathing, dressing, hygiene and mobility assistance"],
+      ["Companionship", "Conversation and activities"],
+      ["Meal Support", "Meal preparation and feeding"],
+      ["Light Housekeeping", "Keeping a clean and comfortable home"],
+      ["Mobility Assistance", "Help with walking and transfers"],
+      ["Medication Reminders", "Gentle reminders (non-medical)"],
+      ["Dementia & Memory Support", "Consistent, patient care"],
+      ["24-Hour Care", "Support for higher care needs"]
+    ],
+    "dutiesNote": "Specific duties depend on the client’s individual care plan.",
+    "teamTitle": "A Team That Feels Like Family",
+    "teamDescription": "Our caregivers make a difference — and it shows.",
+    "teamCaptions": [
+      "Build Meaningful Connections",
+      "Support Independence",
+      "Bring Comfort and Joy"
+    ],
+    "voicesTitle": "Caregiver Voices",
+    "quote": "I love working at Sisi Care because I can make a real difference in people’s lives. The team is supportive, and I feel valued.",
+    "quoteAuthor": "Caregiver Team Member",
+    "voiceMotto": "Caring People. Brighter Tomorrows.",
+    "ctaTitle": "Ready to Join Sisi Care?",
+    "ctaDescription": "Take the next step. We’d love to hear from you.",
+    "questionsTitle": "Have Questions?",
+    "questionsDescription": "We’re happy to help! Contact us to learn more about current opportunities."
+  },
+  "contact": {
+    "eyebrow": "CONTACT US",
+    "title": "Let’s Talk About Your Care Needs",
+    "description": "Whether you need a few hours of support or 24-hour care, we’re here to listen, answer your questions, and help you find the right care for your loved one.",
+    "call": "Call Us",
+    "request": "Request a Free Care Consultation",
+    "formTitle": "How Can We Help?",
+    "formDescription": "Please fill out the form below and we’ll get back to you soon.",
+    "name": "Your Name",
+    "namePlaceholder": "First and last name",
+    "phone": "Phone",
+    "phonePlaceholder": "(206) 334-3505",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "whoTitle": "Who needs care?",
+    "who": ["Myself", "Parent", "Spouse", "Other family member"],
+    "supportTitle": "What kind of help are you looking for?",
+    "support": [
+      "Personal / In-Home Care",
+      "Dementia & Memory Care",
+      "24-Hour Care",
+      "Companion Care",
+      "Not sure yet"
+    ],
+    "whenTitle": "When do you need care?",
+    "when": ["As soon as possible", "Within a few weeks", "Planning ahead", "Not sure"],
+    "message": "Tell us anything you’d like us to know (optional)",
+    "messagePlaceholder": "Share your questions, situation, or any specific needs...",
+    "privacy": "Your information is kept private and will only be used to contact you about our care services.",
+    "talkTitle": "Prefer to Talk?",
+    "talkCall": "Call Sisi Care",
+    "talkDescription": "Have questions? Give us a call. We’re happy to talk through your situation and help you find the best care options.",
+    "addressTitle": "Office / Mailing Address",
+    "hoursTitle": "Office Hours",
+    "hoursDays": "Monday – Friday",
+    "hoursTimes": "9:00 AM – 5:00 PM",
+    "talkMotto": "We’re Here for You.",
+    "areaTitle": "Serving Bellevue & the Eastside",
+    "areaDescription": "We provide in-home care throughout:",
+    "trust": [
+      ["12+ Years", "Serving Local Families"],
+      ["Experienced & Caring", "Caregivers"],
+      ["Locally Owned", "and Community-Focused"]
+    ],
+    "careersTitle": "Looking for a Caregiving Job?",
+    "careersDescription": "Be part of a team that makes a real difference. We’d love to hear from you.",
+    "careersLink": "Visit Careers"
+  }
+}

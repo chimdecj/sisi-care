@@ -1,14 +1,101 @@
+import { HandwrittenNote } from '@/components/handwritten-note';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import { Heart, ShieldCheck, Sprout, HandHeart, Check } from 'lucide-react';
-import { PageIntro, Eyebrow, CareCTA, TrustStrip } from '@/components/shared';
+import {
+  HeartHandshake,
+  Heart,
+  ShieldCheck,
+  Users,
+  GraduationCap,
+  CalendarDays,
+  House,
+  MapPin,
+  Star,
+} from 'lucide-react';
+import { ReferenceHero } from '@/components/reference-hero';
+import { ReferenceImage } from '@/components/reference-image';
+import { CareCTA, TrustStrip, CheckList, ReferenceQuote } from '@/components/shared';
 import { Testimonials } from '@/components/testimonials';
-export const metadata: Metadata = { title: 'About Us', description: 'Meet Sisi Care: a locally owned home care company built on more than 20 years of care experience, personal connection, and a commitment to Eastside families.' };
-export default function About() {return <>
- <PageIntro eyebrow="A LOCAL TEAM WITH A LOT OF HEART" title="Care built on experience." emphasis="And human connection." description="Since 2014, we’ve helped seniors and adults across Bellevue and the Eastside live with comfort, dignity, and a little more joy at home." />
- <section className="section"><div className="container story-grid about-story"><div className="story-photo"><Image src="/images/founder.jpeg" fill priority sizes="(max-width: 760px) 90vw, 35vw" alt="Sisi, founder and owner of Sisi Care"/><div className="founder-label"><span>Sisi</span><small>Founder & Owner</small></div></div><div className="story-copy"><Eyebrow>OUR STORY</Eyebrow><h2>It began with<br /><em>a simple belief.</em></h2><p>Every person deserves to age with dignity, comfort, and kindness in the place they call home.</p><p>With more than 20 years of hands-on care experience and a background in psychology, our founder saw a need for a more personal approach to in-home care. In 2014, Sisi Care was established to bring that vision to life.</p><p>Today, we’re proud to be a locally owned care provider. Our work is built on lasting relationships, dependable support, and a commitment to the people and families in our community.</p><blockquote className="founder-quote">“Care is not just what we do—<br />it’s who we are.”<cite>— Sisi, Founder</cite></blockquote></div></div></section>
- <TrustStrip />
- <section className="section values-section"><div className="container"><div className="center-heading"><Eyebrow>WHAT MATTERS TO US</Eyebrow><h2>Good people.<br /><em>Shared values.</em></h2></div><div className="options-grid">{[{icon:HandHeart,title:'Dignity',text:'We respect each person’s choices, independence, and individual way of life.'},{icon:Heart,title:'Compassion',text:'We care with patience and kindness, in the big moments and the everyday ones.'},{icon:ShieldCheck,title:'Dependability',text:'Families can count on us to show up and be there when it matters.'},{icon:Sprout,title:'Connection',text:'We take time to know the person behind the care plan—their stories, wishes, and routines.'}].map(({icon:Icon,title,text}) => <article key={title}><Icon size={30} strokeWidth={1.4}/><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
- <section className="section caregiver-section"><div className="container two-column"><div><Eyebrow>THE PEOPLE WHO MAKE IT POSSIBLE</Eyebrow><h2>A caring team.<br /><em>A familiar face.</em></h2><p className="body-copy">Our caregivers are at the heart of Sisi Care. We carefully select and support people who share our commitment to thoughtful, dependable care.</p></div><div className="caregiver-panel"><ShieldCheck size={37} strokeWidth={1.3}/><h3>Care you can feel confident in.</h3><ul className="check-list"><li><Check/>Carefully screened and background checked</li><li><Check/>Trained and experienced in senior care</li><li><Check/>Licensed nursing assistants and home care aides</li><li><Check/>Ongoing support and supervision</li><li><Check/>A state-licensed, insured, and bonded agency</li></ul></div></div></section>
- <Testimonials /><CareCTA />
- </>;}
+import copy from '@/lib/prepared-content.json';
+import { IconBadge } from '@/components/icon-badge';
+export const metadata: Metadata = { title: 'About Us', description: copy.about.description };
+export default function About() {
+  const page = copy.about;
+  const founderIcons = [Heart, GraduationCap, Users];
+  const valueIcons = [HeartHandshake, Heart, ShieldCheck, Users];
+  return (
+    <>
+      <ReferenceHero variant="about" />
+      <section className="about-overview">
+        <div className="container about-overview-grid">
+          <article className="about-story">
+            <h2>{page.storyTitle}</h2>
+            {page.story.map((text) => (
+              <p key={text}>{text}</p>
+            ))}
+            <HandwrittenNote text={page.storyMotto} variant="story" className="about-handwriting" />
+          </article>
+          <article className="founder-profile">
+            <ReferenceImage
+              name="founder"
+              alt="Sisi, Founder & Owner, from the prepared About Us page"
+              className="founder-photo"
+            />
+            <h3>{page.founderName}</h3>
+            <p className="founder-role">{page.founderRole}</p>
+            <div className="founder-details">
+              {page.founderDetails.map(([title, text], i) => {
+                const Icon = founderIcons[i];
+                return (
+                  <div key={title}>
+                    <Icon size={32} strokeWidth={2} aria-hidden="true" />
+                    <div>
+                      <strong>{title}</strong>
+                      <p>{text}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <ReferenceQuote quote={page.founderQuote} author={page.founderQuoteAuthor} />
+          </article>
+          <article className="about-values">
+            <h2>{page.valuesTitle}</h2>
+            <p>{page.valuesDescription}</p>
+            <div className="values-list">
+              {page.values.map(([title, text], i) => {
+                return (
+                  <article key={title}>
+                    <IconBadge icon={valueIcons[i]} className="value-icon" />
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{text}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+            <ReferenceQuote quote={page.mission} />
+          </article>
+        </div>
+      </section>
+      <section className="about-team">
+        <div className="wide-container about-team-layout">
+          <ReferenceImage name="caregiver-team" alt={page.teamMotto} className="about-team-photo" />
+          <div>
+            <h2>{page.caregiversTitle}</h2>
+            <p className="team-description">{page.caregiversDescription}</p>
+            <CheckList items={page.caregiversList} />
+          </div>
+          <aside className="license-panel">
+            <ShieldCheck size={45} strokeWidth={1.7} aria-hidden="true" />
+            <h3>{page.licenseTitle}</h3>
+            <p>{page.licenseDescription}</p>
+          </aside>
+        </div>
+      </section>
+      <TrustStrip items={page.trust} icons={[Star, CalendarDays, House, MapPin]} />
+      <Testimonials variant="about" />
+      <CareCTA variant="about" />
+    </>
+  );
+}

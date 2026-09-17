@@ -1,11 +1,124 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowUpRight, ArrowRight, Phone, MapPin, Heart, ShieldCheck, Check } from 'lucide-react';
-import { contact, areas } from '@/lib/content';
-export function Eyebrow({ children }: { children: React.ReactNode }) { return <p className="eyebrow"><span />{children}</p>; }
-export function CareLink({ children = 'Let’s find your care', href = '/contact/', secondary = false }: { children?: React.ReactNode; href?: string; secondary?: boolean }) { return <Link href={href} className={`button ${secondary ? 'button-secondary' : 'button-primary'}`}>{children}<ArrowUpRight size={18} /></Link>; }
-export function TrustStrip() { return <div className="trust-strip"><div className="container trust-grid"><div><Heart /><span><strong>20+ years</strong><small>of hands-on care experience</small></span></div><div><ShieldCheck /><span><strong>Care you can count on</strong><small>Licensed, insured & bonded</small></span></div><div><MapPin /><span><strong>Locally owned</strong><small>Rooted in our community</small></span></div><div><Check /><span><strong>Personal to you</strong><small>Care built around your life</small></span></div></div></div>; }
-export function CareCTA() { return <section className="care-cta"><div className="container cta-layout"><div><p className="eyebrow light">WE’RE HERE FOR YOU</p><h2>A conversation today.<br /><em>A brighter tomorrow.</em></h2><p>Finding care starts with someone who listens. Let’s talk about what your family needs.</p></div><div className="cta-actions"><Link href="/contact/" className="button button-white">Book a free consultation <ArrowUpRight size={18} /></Link><a href={`tel:${contact.tel}`} className="cta-phone"><Phone size={19} /> {contact.phone}</a><span>No pressure. No obligation. Just a conversation.</span></div></div></section>; }
-export function ServiceArea() { return <section className="area-section"><div className="container area-layout"><div className="area-icon"><MapPin size={32} strokeWidth={1.4} /></div><div><Eyebrow>NEIGHBORS CARING FOR NEIGHBORS</Eyebrow><h2>At home on the Eastside.</h2><p>Local people. Familiar places. Thoughtful care, right where you belong.</p><div className="area-list">{areas.map(area => <span key={area}>{area}</span>)}<span>& surrounding areas</span></div></div><Link className="text-link" href="/contact/">Talk to our local team <ArrowRight size={18} /></Link></div></section>; }
-export function Footer() { return <footer className="footer"><div className="container footer-main"><div className="footer-brand"><Link href="/" aria-label="Sisi Care home"><Image src="/images/sisi-care-logo.png" width={116} height={91} alt="Sisi Care" /></Link><p>Caring people.<br />Brighter days.</p></div><div><h3>Explore</h3><Link href="/">Home</Link><Link href="/in-home-care/">In-Home Care</Link><Link href="/about/">About Us</Link><Link href="/careers/">Careers</Link></div><div><h3>Let’s connect</h3><a href={`tel:${contact.tel}`}>{contact.phone}</a><a href={`mailto:${contact.email}`}>{contact.email}</a><Link href="/contact/">Free care consultation <ArrowUpRight size={14} /></Link></div><div><h3>Come say hello</h3><a href={contact.maps} target="_blank" rel="noreferrer">{contact.address}<br />{contact.city}</a><p>Monday – Friday<br />9:00 AM – 5:00 PM</p></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Sisi Care. All rights reserved.</span><span>In-home care. A brighter tomorrow at home.</span></div></footer>; }
-export function PageIntro({ eyebrow, title, emphasis, description }: { eyebrow: string; title: string; emphasis: string; description: string }) { return <section className="page-intro"><div className="container"><Eyebrow>{eyebrow}</Eyebrow><h1>{title}<br /><em>{emphasis}</em></h1><p>{description}</p></div></section>; }
+import {
+  ArrowRight,
+  Phone,
+  Heart,
+  ShieldCheck,
+  Users,
+  CalendarDays,
+  Check,
+  Quote,
+  type LucideIcon,
+} from 'lucide-react';
+import { contact } from '@/lib/content';
+import copy from '@/lib/prepared-content.json';
+export function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <p className="eyebrow">{children}</p>;
+}
+export function CareLink({
+  children = copy.common.consultation,
+  href = '/contact/#consultation',
+  secondary = false,
+}: {
+  children?: React.ReactNode;
+  href?: string;
+  secondary?: boolean;
+}) {
+  return (
+    <Link href={href} className={`button ${secondary ? 'button-secondary' : 'button-primary'}`}>
+      {children}
+      <ArrowRight size={17} aria-hidden="true" />
+    </Link>
+  );
+}
+export function CheckList({ items }: { items: string[] }) {
+  return (
+    <ul className="check-list">
+      {items.map((item) => (
+        <li key={item}>
+          <Check aria-hidden="true" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+export function ReferenceQuote({ quote, author }: { quote: string; author?: string }) {
+  return (
+    <blockquote className="reference-quote">
+      <Quote size={26} fill="currentColor" aria-hidden="true" />
+      <p>“{quote}”</p>
+      {author && <cite>— {author}</cite>}
+    </blockquote>
+  );
+}
+export function TrustStrip({
+  items = copy.home.trust,
+  icons = [CalendarDays, Heart, Users, ShieldCheck],
+}: {
+  items?: string[][];
+  icons?: LucideIcon[];
+}) {
+  return (
+    <div className="trust-strip">
+      <div className={`container trust-grid trust-grid-${items.length}`}>
+        {items.map(([title, description], i) => {
+          const Icon = icons[i % icons.length];
+          return (
+            <div key={title}>
+              <Icon aria-hidden="true" />
+              <span>
+                <strong>{title}</strong>
+                <small>{description}</small>
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+export function CareCTA({ variant = 'home' }: { variant?: 'home' | 'about' }) {
+  const page = copy[variant];
+  return (
+    <>
+      <section className="care-cta">
+        <div className="container cta-layout">
+          <div>
+            <h2>{page.ctaTitle}</h2>
+            <p>{page.ctaDescription}</p>
+          </div>
+          <div className="cta-actions">
+            <a href={`tel:${contact.tel}`} className="cta-phone">
+              <Phone size={23} aria-hidden="true" />
+              {contact.phone}
+            </a>
+            <CareLink />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+export function PageIntro({
+  eyebrow,
+  title,
+  description,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <section className="page-intro">
+      <div className="container">
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {children}
+      </div>
+    </section>
+  );
+}

@@ -1,11 +1,120 @@
+import { HandwrittenNote } from '@/components/handwritten-note';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, MapPin, Clock3, Mail, ArrowUpRight, Heart } from 'lucide-react';
-import { PageIntro, Eyebrow } from '@/components/shared';
+import { Phone, MapPin, Clock3, ArrowRight, House, Users, Star } from 'lucide-react';
+import { ReferenceHero } from '@/components/reference-hero';
+import { ReferenceImage } from '@/components/reference-image';
+import { TrustStrip } from '@/components/shared';
 import { ContactForm } from '@/components/contact-form';
-import { contact, areas } from '@/lib/content';
-export const metadata: Metadata = { title: 'Contact Us', description: 'Let’s talk about your family’s care needs. Call Sisi Care at (206) 334-3505 or prepare a free consultation request. Serving Bellevue and the Eastside.' };
-export default function Contact() { return <>
- <PageIntro eyebrow="WE’RE HERE TO LISTEN" title="You don’t have to" emphasis="figure it out alone." description="Whether you need a few hours of support or around-the-clock care, we’ll help you take the next step. Let’s start with a conversation."/>
- <section className="section"><div className="container contact-layout"><ContactForm/><aside className="contact-aside"><div className="contact-card"><Eyebrow>A FRIENDLY VOICE IS A CALL AWAY</Eyebrow><h2>Prefer to talk?</h2><p>We’re happy to listen, answer your questions, and explore your options together.</p><a href={`tel:${contact.tel}`} className="contact-big-phone"><Phone size={25}/>{contact.phone}</a><div className="contact-detail"><Mail/><div><strong>Email us</strong><a href={`mailto:${contact.email}`}>{contact.email}</a></div></div><div className="contact-detail"><MapPin/><div><strong>Our office</strong><a href={contact.maps} target="_blank" rel="noreferrer">{contact.address}<br/>{contact.city}<span className="directions">Get directions <ArrowUpRight size={13}/></span></a></div></div><div className="contact-detail"><Clock3/><div><strong>Office hours</strong><p>Monday – Friday<br/>9:00 AM – 5:00 PM</p></div></div></div><div className="contact-area"><MapPin size={25} strokeWidth={1.4}/><h3>Local care.<br/>A stronger community.</h3><p>Serving families in {areas.slice(0,-1).join(', ')}, {areas[areas.length-1]}, and surrounding areas.</p></div><div className="careers-callout"><Heart size={22}/><div><h3>Have a heart for caring?</h3><p>We’d love to get to know you.</p><Link href="/careers/" className="text-link">Explore careers <ArrowUpRight size={16}/></Link></div></div></aside></div></section>
- </>;}
+import { contact } from '@/lib/content';
+import copy from '@/lib/prepared-content.json';
+export const metadata: Metadata = { title: 'Contact Us', description: copy.contact.description };
+export default function Contact() {
+  const page = copy.contact;
+  return (
+    <>
+      <ReferenceHero variant="contact" />
+      <section className="contact-section" id="consultation">
+        <div className="container contact-layout">
+          <ContactForm />
+          <aside className="contact-aside">
+            <div className="contact-card">
+              <h2>{page.talkTitle}</h2>
+              <div className="contact-call">
+                <span className="contact-call-icon">
+                  <Phone size={38} aria-hidden="true" />
+                </span>
+                <div>
+                  <h3>{page.talkCall}</h3>
+                  <a href={`tel:${contact.tel}`} className="contact-big-phone">
+                    {contact.phone}
+                  </a>
+                  <p>{page.talkDescription}</p>
+                </div>
+              </div>
+              <div className="contact-detail">
+                <MapPin fill="currentColor" aria-hidden="true" />
+                <div>
+                  <strong>{page.addressTitle}</strong>
+                  <a href={contact.maps} target="_blank" rel="noreferrer">
+                    {contact.address}, {contact.city}
+                  </a>
+                </div>
+              </div>
+              <div className="contact-detail contact-hours">
+                <Clock3 aria-hidden="true" />
+                <div>
+                  <strong>{page.hoursTitle}</strong>
+                  <p>
+                    {page.hoursDays}
+                    <br />
+                    {page.hoursTimes}
+                  </p>
+                </div>
+                <HandwrittenNote
+                  text={page.talkMotto}
+                  variant="contact"
+                  className="contact-handwriting"
+                />
+              </div>
+            </div>
+            <div className="contact-area">
+              <div className="contact-area-heading">
+                <MapPin size={44} fill="currentColor" aria-hidden="true" />
+                <div>
+                  <h3>{page.areaTitle}</h3>
+                  <p>{page.areaDescription}</p>
+                  <p>
+                    {copy.common.areaNames}
+                    <br />
+                    {copy.common.surrounding}
+                  </p>
+                </div>
+              </div>
+              <iframe
+                title={`Google Maps: Sisi Care office at ${contact.address}, ${contact.city}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(`${contact.address}, ${contact.city}`)}&z=13&output=embed`}
+                className="contact-map"
+                width="600"
+                height="340"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+              <a
+                href={contact.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link contact-map-link"
+              >
+                Open in Google Maps
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <TrustStrip items={page.trust} icons={[Star, Users, House]} />
+      <section className="contact-careers">
+        <div className="wide-container contact-careers-layout">
+          <div className="contact-careers-media">
+            <ReferenceImage
+              name="contact-careers"
+              alt={copy.common.careMotto}
+              className="contact-careers-photo"
+              sizes="(max-width: 600px) 100vw, (max-width: 820px) 40vw, 420px"
+            />
+          </div>
+          <div className="contact-careers-copy">
+            <h2>{page.careersTitle}</h2>
+            <p>{page.careersDescription}</p>
+          </div>
+          <Link href="/careers/" className="button button-secondary">
+            {page.careersLink}
+            <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

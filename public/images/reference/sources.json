@@ -1,0 +1,308 @@
+{
+  "logo": {
+    "source": "home.jpeg",
+    "crop": [54, 0, 342, 74],
+    "width": 288,
+    "height": 74
+  },
+  "logo-careers": {
+    "source": "careers.jpeg",
+    "crop": [40, 0, 343, 71],
+    "width": 303,
+    "height": 71
+  },
+  "logo-contact": {
+    "source": "contact.jpeg",
+    "crop": [33, 0, 350, 72],
+    "width": 317,
+    "height": 72
+  },
+  "hero-home": {
+    "source": "home.jpeg",
+    "crop": [522, 60, 1024, 402],
+    "width": 502,
+    "height": 342
+  },
+  "hero-care": {
+    "source": "in home care.jpeg",
+    "crop": [511, 59, 1024, 391],
+    "width": 513,
+    "height": 332
+  },
+  "hero-about": {
+    "source": "about.jpeg",
+    "crop": [495, 60, 1024, 389],
+    "width": 529,
+    "height": 329
+  },
+  "hero-careers": {
+    "source": "careers.jpeg",
+    "crop": [514, 61, 1024, 421],
+    "width": 510,
+    "height": 360
+  },
+  "hero-contact": {
+    "source": "contact.jpeg",
+    "crop": [487, 62, 1024, 379],
+    "width": 537,
+    "height": 317
+  },
+  "home-hands": {
+    "source": "home.jpeg",
+    "crop": [0, 620, 366, 803],
+    "width": 366,
+    "height": 183
+  },
+  "memory-care": {
+    "source": "in home care.jpeg",
+    "crop": [0, 709, 381, 917],
+    "width": 381,
+    "height": 208
+  },
+  "care-hands": {
+    "source": "in home care.jpeg",
+    "crop": [688, 931, 800, 1101],
+    "width": 112,
+    "height": 170
+  },
+  "founder": {
+    "source": "about.jpeg",
+    "crop": [412, 399, 650, 562],
+    "width": 238,
+    "height": 163
+  },
+  "caregiver-team": {
+    "source": "about.jpeg",
+    "crop": [0, 862, 405, 1068],
+    "width": 405,
+    "height": 206
+  },
+  "career-connection": {
+    "source": "careers.jpeg",
+    "crop": [45, 998, 202, 1106],
+    "width": 157,
+    "height": 108
+  },
+  "career-independence": {
+    "source": "careers.jpeg",
+    "crop": [214, 998, 373, 1106],
+    "width": 159,
+    "height": 108
+  },
+  "career-joy": {
+    "source": "careers.jpeg",
+    "crop": [385, 998, 544, 1106],
+    "width": 159,
+    "height": 108
+  },
+  "caregiver-portrait": {
+    "source": "careers.jpeg",
+    "crop": [777, 974, 909, 1128],
+    "width": 132,
+    "height": 154
+  },
+  "contact-map": {
+    "source": "contact.jpeg",
+    "crop": [567, 885, 988, 1086],
+    "width": 421,
+    "height": 201
+  },
+  "contact-careers": {
+    "source": "contact.jpeg",
+    "crop": [0, 1202, 302, 1334],
+    "width": 302,
+    "height": 132
+  },
+  "bellevue-landscape": {
+    "source": "careers.jpeg",
+    "crop": [0, 1277, 647, 1400],
+    "width": 647,
+    "height": 123
+  },
+  "logo-flower": {
+    "source": "home.jpeg",
+    "crop": [58, 3, 143, 65],
+    "width": 85,
+    "height": 62
+  },
+  "logo-wine": {
+    "source": "home.jpeg",
+    "crop": [35, 1359, 297, 1428],
+    "width": 262,
+    "height": 69
+  },
+  "logo-navy": {
+    "source": "contact.jpeg",
+    "crop": [34, 1351, 289, 1425],
+    "width": 255,
+    "height": 74
+  },
+  "about-handwriting": {
+    "source": "about.jpeg",
+    "crop": [39, 718, 337, 811],
+    "width": 298,
+    "height": 93
+  },
+  "career-handwriting": {
+    "source": "careers.jpeg",
+    "crop": [373, 788, 501, 914],
+    "width": 128,
+    "height": 126
+  },
+  "career-voice-handwriting": {
+    "source": "careers.jpeg",
+    "crop": [915, 976, 1013, 1097],
+    "width": 98,
+    "height": 121
+  },
+  "career-together": {
+    "source": "careers.jpeg",
+    "crop": [441, 1171, 606, 1266],
+    "width": 165,
+    "height": 95
+  },
+  "contact-handwriting": {
+    "source": "contact.jpeg",
+    "crop": [838, 653, 981, 747],
+    "width": 143,
+    "height": 94
+  },
+  "home-service-1": {
+    "source": "home.jpeg",
+    "crop": [78, 466, 144, 530],
+    "width": 66,
+    "height": 64
+  },
+  "home-service-2": {
+    "source": "home.jpeg",
+    "crop": [239, 466, 305, 530],
+    "width": 66,
+    "height": 64
+  },
+  "home-service-3": {
+    "source": "home.jpeg",
+    "crop": [400, 466, 466, 530],
+    "width": 66,
+    "height": 64
+  },
+  "home-service-4": {
+    "source": "home.jpeg",
+    "crop": [562, 466, 628, 530],
+    "width": 66,
+    "height": 64
+  },
+  "home-service-5": {
+    "source": "home.jpeg",
+    "crop": [724, 466, 790, 530],
+    "width": 66,
+    "height": 64
+  },
+  "home-service-6": {
+    "source": "home.jpeg",
+    "crop": [885, 466, 951, 530],
+    "width": 66,
+    "height": 64
+  },
+  "care-service-1": {
+    "source": "in home care.jpeg",
+    "crop": [92, 453, 170, 515],
+    "width": 78,
+    "height": 62
+  },
+  "care-service-2": {
+    "source": "in home care.jpeg",
+    "crop": [356, 453, 434, 515],
+    "width": 78,
+    "height": 62
+  },
+  "care-service-3": {
+    "source": "in home care.jpeg",
+    "crop": [601, 453, 679, 515],
+    "width": 78,
+    "height": 62
+  },
+  "care-service-4": {
+    "source": "in home care.jpeg",
+    "crop": [857, 453, 935, 515],
+    "width": 78,
+    "height": 62
+  },
+  "value-1": {
+    "source": "about.jpeg",
+    "crop": [684, 448, 755, 518],
+    "width": 71,
+    "height": 70
+  },
+  "value-2": {
+    "source": "about.jpeg",
+    "crop": [684, 527, 755, 597],
+    "width": 71,
+    "height": 70
+  },
+  "value-3": {
+    "source": "about.jpeg",
+    "crop": [681, 599, 752, 669],
+    "width": 71,
+    "height": 70
+  },
+  "value-4": {
+    "source": "about.jpeg",
+    "crop": [684, 672, 755, 742],
+    "width": 71,
+    "height": 70
+  },
+  "benefit-1": {
+    "source": "careers.jpeg",
+    "crop": [91, 442, 156, 501],
+    "width": 65,
+    "height": 59
+  },
+  "benefit-2": {
+    "source": "careers.jpeg",
+    "crop": [285, 442, 350, 501],
+    "width": 65,
+    "height": 59
+  },
+  "benefit-3": {
+    "source": "careers.jpeg",
+    "crop": [480, 442, 545, 501],
+    "width": 65,
+    "height": 59
+  },
+  "benefit-4": {
+    "source": "careers.jpeg",
+    "crop": [683, 442, 748, 501],
+    "width": 65,
+    "height": 59
+  },
+  "benefit-5": {
+    "source": "careers.jpeg",
+    "crop": [881, 442, 946, 501],
+    "width": 65,
+    "height": 59
+  },
+  "home-area-banner": {
+    "source": "home.jpeg",
+    "crop": [0, 1204, 1024, 1354],
+    "width": 1024,
+    "height": 150
+  },
+  "care-area-banner": {
+    "source": "in home care.jpeg",
+    "crop": [0, 1255, 1024, 1406],
+    "width": 1024,
+    "height": 151
+  },
+  "about-cta-banner": {
+    "source": "about.jpeg",
+    "crop": [0, 1287, 1024, 1424],
+    "width": 1024,
+    "height": 137
+  },
+  "careers-cta-banner": {
+    "source": "careers.jpeg",
+    "crop": [0, 1148, 1024, 1400],
+    "width": 1024,
+    "height": 252
+  }
+}

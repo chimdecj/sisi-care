@@ -1,0 +1,20 @@
+# Dependencies and generated output
+node_modules/
+.next/
+out/
+coverage/
+.sites-runtime/
+.openai/
+*.tsbuildinfo
+next-env.d.ts
+package-lock.json
+
+# Framework-managed agent instructions
+/AGENTS.md
+/CLAUDE.md
+
+# Supplied reference materials
+/customer/
+/pages/
+/owner.jpeg
+/*.docx
