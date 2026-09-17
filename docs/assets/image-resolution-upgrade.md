@@ -1,8 +1,8 @@
 # Website image resolution upgrade
 
-Thirteen screenshot-derived photos and five handwritten graphics have been restored with the built-in image editing tool and exported as optimized WebP files. The original screenshot crops remain unchanged in `public/images/reference/`.
+Thirteen screenshot-derived photos and five handwritten graphics have been restored with the built-in image editing tool and exported as optimized WebP files. Unused screenshot crops and superseded exports were removed during asset cleanup. Their crop coordinates are archived in `docs/assets/reference-crops.json`; `docs/assets/asset-cleanup.md` lists retired files.
 
-The shared `ReferenceImage` component uses the restored files when present and falls back to original crops for assets still awaiting restoration. Restored assets preserve their original aspect ratios, page copy and alternative text. The Contact careers strip additionally uses the full-height image layout requested below.
+The shared `ReferenceImage` component reads the active restored-image manifest directly; the old screenshot fallback has been removed. Restored assets preserve their original aspect ratios, page copy and alternative text. The Contact careers strip additionally uses the full-height image layout requested below.
 
 | Asset                 | Original  | Restored web export |
 | --------------------- | --------- | ------------------- |
@@ -36,9 +36,9 @@ Each image keeps the same aspect ratio and displayed dimensions. The handwritten
 
 These are AI-assisted restorations, not higher-resolution source originals; fine photographic details are reconstructed. Source compositions, people, colors, and visible wording were used as editing constraints and reviewed before integration. Native output sizes are approximately 1500–1800 pixels wide for the landscape restorations, with exports adjusted slightly to exact original aspect ratios.
 
-The Careers hero now uses `public/images/enhanced/hero-careers-brand.webp` (1530 × 1080). All three chest marks were corrected together using the header logo as reference. The earlier hero image is retained as `hero-careers.webp`.
+The Careers hero now uses `public/images/enhanced/hero-careers-brand.webp` (1530 × 1080). All three chest marks were corrected together using the header logo as reference. The earlier `hero-careers.webp` export was removed after its replacement was confirmed in use.
 
-The five standalone handwritten raster graphics listed above have since been replaced by real Caveat text and Lucide outline hearts; see `docs/assets/handwritten-notes.md`. Their restored image files remain available as references.
+The five standalone handwritten raster graphics listed above have since been replaced by real Caveat text and Lucide outline hearts; see `docs/assets/handwritten-notes.md`. Their unused raster exports were removed during asset cleanup; the editing prompts remain in the historical record.
 
 ## Contact careers strip
 
@@ -62,7 +62,7 @@ The earlier image-tool limit interrupted the initial full-site pass. The request
 
 The Contact service-area map has been replaced with an interactive Google Maps embed.
 
-No replacement people, unrelated stock photos, or simply enlarged screenshot crops were installed for these unfinished assets. The larger `founder.jpeg` and `care-at-home.webp` files were inspected but depict different photographs from the approved page designs.
+No replacement people, unrelated stock photos, or simply enlarged screenshot crops were installed for these unfinished assets. The larger `founder.jpeg` and `care-at-home.webp` files depicted different photographs from the approved page designs and were removed as unused copies.
 
 ## Reproducibility
 

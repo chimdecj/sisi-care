@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import sources from '@/public/images/reference/sources.json';
-import enhancedSources from '@/public/images/enhanced/sources.json';
+import sources from '@/public/images/enhanced/sources.json';
 
 export type ReferenceAsset = keyof typeof sources;
-type EnhancedAsset = keyof typeof enhancedSources;
 
 export function ReferenceImage({
   name,
@@ -18,15 +16,11 @@ export function ReferenceImage({
   priority?: boolean;
   sizes?: string;
 }) {
-  // Restored files keep the reference aspect ratio, so existing layouts stay stable.
-  const enhanced = Object.hasOwn(enhancedSources, name)
-    ? enhancedSources[name as EnhancedAsset]
-    : undefined;
-  const source = enhanced ?? sources[name];
+  const source = sources[name];
 
   return (
     <Image
-      src={enhanced?.src ?? `/images/reference/${name}.webp`}
+      src={source.src}
       alt={alt}
       width={source.width}
       height={source.height}

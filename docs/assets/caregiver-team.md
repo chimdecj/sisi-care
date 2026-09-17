@@ -1,6 +1,6 @@
 # About page caregiver team photograph
 
-- Original screenshot crop: `public/images/reference/caregiver-team.webp` (405 × 206), retained unchanged.
+- Original screenshot crop: `public/images/reference/caregiver-team.webp` (405 × 206), a historical input removed during asset cleanup; crop coordinates remain in `reference-crops.json`.
 - Restored web asset: `public/images/enhanced/caregiver-team.webp` (1620 × 824).
 - Selected generated master: `/Users/chimdee/.codex/generated_images/01a0a8aa-bcf7-7b60-bb4c-cc1725be552e/exec-9425e789-e7d6-4755-86e1-dd3a50e24af7.png` (1758 × 895).
 - Method: built-in image editing tool, followed by proportional WebP export with Sharp at quality 92.

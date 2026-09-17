@@ -10,7 +10,7 @@ Five standalone screenshot graphics are now selectable HTML text rendered by `co
 
 The wording comes from `lib/prepared-content.json`. Line wrapping preserves the prepared compositions, and the original placement classes and aspect ratios preserve section geometry. Container-relative type sizes scale with each note. Decorative hearts use the existing Lucide outline icon and remain hidden from assistive technology.
 
-The font is Caveat, a close handwriting match rather than an exact identification of the screenshot lettering. It is loaded locally through `next/font/local`, scoped only to these notes. Its Latin variable WOFF2 file and SIL Open Font License are in `public/fonts/caveat/`; visitors make no external Google Fonts requests. The page body fonts and lettering embedded inside photographs are unchanged. Earlier raster note assets remain available but are no longer rendered on these pages.
+The font is Caveat, a close handwriting match rather than an exact identification of the screenshot lettering. It is loaded locally through `next/font/local`, scoped only to these notes. Its Latin variable WOFF2 file and SIL Open Font License are in `public/fonts/caveat/`; visitors make no external Google Fonts requests. The page body fonts and lettering embedded inside photographs are unchanged. Earlier raster note assets have been removed because these pages now render the notes as text.
 
 Font source: https://github.com/google/fonts/tree/main/ofl/caveat
 

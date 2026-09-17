@@ -2,7 +2,7 @@
 
 Asset: public/images/sisi-care-logo-hd.webp
 
-The original 288 × 74 logo from public/images/reference/logo.webp is preserved. A high-resolution restoration was created with the built-in image editing tool, requesting the same pink lotus, burgundy Sisi Care lettering, and “In-Home Care • A Brighter Tomorrow at Home” tagline. Only excess white canvas margins were cropped from the generated image before exporting the web asset.
+The original 288 × 74 logo from public/images/reference/logo.webp was used as the restoration reference. That unused crop was removed during asset cleanup; its coordinates are archived in `reference-crops.json`. A high-resolution restoration was created with the built-in image editing tool, requesting the same pink lotus, burgundy Sisi Care lettering, and “In-Home Care • A Brighter Tomorrow at Home” tagline. Only excess white canvas margins were cropped from the generated image before exporting the web asset.
 
 The high-quality WebP is 1152 × 296 pixels, four times the original width and height, with the same aspect ratio. The optimized asset is approximately 37 KB. The shared BrandLogo component uses this one asset for every header and footer; its CSS display dimensions are unchanged.
 
