@@ -377,9 +377,6 @@ select {
   color: var(--pink);
   flex-shrink: 0;
 }
-.hero-proof > div:first-child svg {
-  color: var(--navy);
-}
 .hero-proof strong,
 .hero-proof small {
   display: block;

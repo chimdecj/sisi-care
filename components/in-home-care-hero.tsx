@@ -1,5 +1,5 @@
 import { Heart, House, ShieldCheck, Users } from 'lucide-react';
-import Image from 'next/image';
+import { ReferenceImage } from './reference-image';
 import { CareLink } from './shared';
 import copy from '@/lib/prepared-content.json';
 
@@ -8,10 +8,8 @@ export function InHomeCareHero() {
   return (
     <section className="in-home-care-hero" aria-labelledby="in-home-care-heading">
       <div className="page-hero-photo">
-        <Image
-          src="/images/in-home-care-hero-clean.webp"
-          width={1560}
-          height={1008}
+        <ReferenceImage
+          name="hero-about"
           alt="A Sisi Care caregiver supporting an older woman in her home"
           priority
           sizes="(max-width: 760px) 100vw, 50vw"

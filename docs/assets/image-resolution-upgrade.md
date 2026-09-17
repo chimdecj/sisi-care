@@ -1,6 +1,6 @@
 # Website image resolution upgrade
 
-Twelve screenshot-derived photos and five handwritten graphics have been restored with the built-in image editing tool and exported as optimized WebP files. The original screenshot crops remain unchanged in `public/images/reference/`.
+Thirteen screenshot-derived photos and five handwritten graphics have been restored with the built-in image editing tool and exported as optimized WebP files. The original screenshot crops remain unchanged in `public/images/reference/`.
 
 The shared `ReferenceImage` component uses the restored files when present and falls back to original crops for assets still awaiting restoration. Restored assets preserve their original aspect ratios, page copy and alternative text. The Contact careers strip additionally uses the full-height image layout requested below.
 
@@ -46,13 +46,21 @@ The wooden-heart photograph now uses `public/images/enhanced/contact-careers.web
 
 The photo fills the entire section height on desktop and tablet. Vertical space belongs to the text and button rather than above and below the photo. A dedicated media wrapper spans both text and button rows on tablet, and an adjusted crop keeps the lettering visible. On mobile the photo spans the full width at the top, followed by the original text and link.
 
+## Founder portrait
+
+The founder portrait now uses the newly supplied original photo, expanded and restored with the built-in image editing tool. The 1428 × 978 landscape export shows more shoulders and surroundings while preserving the existing page image ratio. See `docs/assets/founder-profile.md` for the source, editing prompt, and saved asset.
+
+## About caregiver team photo
+
+The team photograph now uses `public/images/enhanced/caregiver-team.webp` at 1620 × 824, restored from the 405 × 206 screenshot crop. Its composition, handwritten sign, and pink lotus / white script uniform logos are retained. The existing image ratio and page layout are unchanged. See `docs/assets/caregiver-team.md` for the source and both editing prompts.
+
 ## Remaining work
 
 The earlier image-tool limit interrupted the initial full-site pass. The requested Careers photos and standalone handwritten graphics are now complete. These other assets still use their original files:
 
-- Founder portrait and About caregiver team photo.
-- Contact service-area map.
 - Decorative lotus crop.
+
+The Contact service-area map has been replaced with an interactive Google Maps embed.
 
 No replacement people, unrelated stock photos, or simply enlarged screenshot crops were installed for these unfinished assets. The larger `founder.jpeg` and `care-at-home.webp` files were inspected but depict different photographs from the approved page designs.
 

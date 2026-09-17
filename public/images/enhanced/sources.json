@@ -83,5 +83,15 @@
     "src": "/images/enhanced/contact-careers.webp",
     "width": 1812,
     "height": 792
+  },
+  "founder": {
+    "src": "/images/enhanced/founder-profile-wide.webp",
+    "width": 1428,
+    "height": 978
+  },
+  "caregiver-team": {
+    "src": "/images/enhanced/caregiver-team.webp",
+    "width": 1620,
+    "height": 824
   }
 }

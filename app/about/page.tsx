@@ -37,7 +37,7 @@ export default function About() {
           <article className="founder-profile">
             <ReferenceImage
               name="founder"
-              alt="Sisi, Founder & Owner, from the prepared About Us page"
+              alt="Sisi, Founder & Owner of Sisi Care"
               className="founder-photo"
             />
             <h3>{page.founderName}</h3>
