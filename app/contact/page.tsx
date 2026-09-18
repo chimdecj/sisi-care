@@ -1,7 +1,7 @@
 import { HandwrittenNote } from '@/components/handwritten-note';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, MapPin, Clock3, ArrowRight, House, Users, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock3, ArrowRight, House, Users, Star } from 'lucide-react';
 import { ReferenceHero } from '@/components/reference-hero';
 import { ReferenceImage } from '@/components/reference-image';
 import { TrustStrip } from '@/components/shared';
@@ -39,6 +39,13 @@ export default function Contact() {
                   <a href={contact.maps} target="_blank" rel="noreferrer">
                     {contact.address}, {contact.city}
                   </a>
+                </div>
+              </div>
+              <div className="contact-detail">
+                <Mail aria-hidden="true" />
+                <div>
+                  <strong>{page.emailTitle}</strong>
+                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
                 </div>
               </div>
               <div className="contact-detail contact-hours">

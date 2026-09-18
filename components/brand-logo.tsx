@@ -11,7 +11,7 @@ export function BrandLogo({
 }) {
   return (
     <Image
-      src="/images/sisi-care-logo-hd.webp"
+      src="/images/sisi-care-logo-hd.png"
       width={1152}
       height={296}
       alt={`Sisi Care — ${copy.common.brandTagline}`}
