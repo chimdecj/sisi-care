@@ -9,7 +9,7 @@ export function InHomeCareHero() {
     <section className="in-home-care-hero" aria-labelledby="in-home-care-heading">
       <div className="page-hero-photo">
         <ReferenceImage
-          name="hero-about"
+          name="hero-home"
           alt="A Sisi Care caregiver supporting an older woman in her home"
           priority
           sizes="(max-width: 760px) 100vw, 50vw"

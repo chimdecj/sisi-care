@@ -1628,6 +1628,29 @@ fieldset {
   background: var(--pink);
   box-shadow: inset 0 0 0 4px white;
 }
+.form-captcha {
+  margin-block: 18px;
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+.form-captcha a {
+  text-decoration: underline;
+}
+.contact-form[aria-busy='true'] .form-submit {
+  cursor: wait;
+}
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.form-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
 .form-submit {
   width: 100%;
   font-size: var(--type-body);
@@ -1808,7 +1831,7 @@ fieldset {
 .contact-careers .button {
   min-width: 180px;
 }
-.draft-result {
+.form-result {
   padding: 22px;
   border: 1px solid #f1bad1;
   border-radius: 7px;
@@ -1825,34 +1848,11 @@ fieldset {
   border-radius: 50%;
   margin-bottom: 14px;
 }
-.draft-result p {
+.form-result p {
   margin-top: 12px;
   font-size: var(--type-body);
 }
-.draft-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 17px;
-}
-.draft-result details {
-  margin-top: 17px;
-}
-.draft-result summary {
-  cursor: pointer;
-  color: var(--pink);
-}
-.draft-result pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  font-family: inherit;
-  font-size: var(--type-body);
-  line-height: 1.6;
-  padding: 14px;
-  background: white;
-  margin-top: 10px;
-}
-.draft-result p a {
+.form-result p a {
   text-decoration: underline;
 }
 @media (min-width: 1440px) {

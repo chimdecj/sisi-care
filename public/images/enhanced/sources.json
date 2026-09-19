@@ -1,8 +1,8 @@
 {
   "hero-home": {
-    "src": "/images/enhanced/hero-home.webp",
-    "width": 1506,
-    "height": 1026
+    "src": "/images/enhenced-new/hero.jpg",
+    "width": 1536,
+    "height": 1024
   },
   "hero-about": {
     "src": "/images/enhanced/hero-about.webp",
@@ -25,9 +25,9 @@
     "height": 732
   },
   "memory-care": {
-    "src": "/images/enhanced/memory-care.webp",
-    "width": 1524,
-    "height": 832
+    "src": "/images/enhenced-new/memory-care.jpg",
+    "width": 1536,
+    "height": 1024
   },
   "care-hands": {
     "src": "/images/enhanced/care-hands.webp",
@@ -35,19 +35,19 @@
     "height": 1020
   },
   "career-connection": {
-    "src": "/images/enhanced/career-connection-brand.webp",
-    "width": 942,
-    "height": 648
+    "src": "/images/enhenced-new/career-connection-brand.jpg",
+    "width": 504,
+    "height": 429
   },
   "career-independence": {
-    "src": "/images/enhanced/career-independence-brand.webp",
-    "width": 954,
-    "height": 648
+    "src": "/images/enhenced-new/career-independence-brand.jpg",
+    "width": 504,
+    "height": 426
   },
   "career-joy": {
-    "src": "/images/enhanced/career-joy-brand.webp",
-    "width": 954,
-    "height": 648
+    "src": "/images/enhenced-new/career-joy-brand.jpg",
+    "width": 500,
+    "height": 425
   },
   "caregiver-portrait": {
     "src": "/images/enhanced/caregiver-portrait-brand.webp",
@@ -65,8 +65,8 @@
     "height": 978
   },
   "caregiver-team": {
-    "src": "/images/enhanced/caregiver-team.webp",
-    "width": 1620,
-    "height": 824
+    "src": "/images/enhenced-new/caregiver-team.jpg",
+    "width": 1536,
+    "height": 1024
   }
 }

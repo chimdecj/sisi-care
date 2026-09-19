@@ -8,7 +8,7 @@ import {
   Sprout,
   type LucideIcon,
 } from 'lucide-react';
-import { ReferenceImage, type ReferenceAsset } from './reference-image';
+import { ReferenceImage } from './reference-image';
 import { CareLink } from './shared';
 import { contact } from '@/lib/content';
 import copy from '@/lib/prepared-content.json';
@@ -31,7 +31,7 @@ export function ReferenceHero({ variant }: { variant: PageName }) {
     <section className={`reference-hero reference-hero-${variant}`}>
       <div className="reference-hero-photo">
         <ReferenceImage
-          name={`hero-${variant}` as ReferenceAsset}
+          name={variant === 'careers' ? 'hero-careers' : 'hero-home'}
           alt={
             variant === 'careers'
               ? 'The Sisi Care team in navy uniforms, from the prepared Careers design'

@@ -24,7 +24,7 @@ export function Testimonials({
         </div>
         <div className={`testimonial-grid ${variant === 'home' ? 'testimonial-grid-home' : ''}`}>
           {page.testimonials.map((t) => (
-            <figure className="testimonial" key={t.name}>
+            <figure className="testimonial" key={`${t.name}-${t.quote}`}>
               <Quote size={23} fill="currentColor" aria-hidden="true" />
               <blockquote>“{t.quote}”</blockquote>
               {variant === 'home' && (

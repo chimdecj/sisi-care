@@ -42,11 +42,6 @@ export function SiteFooter() {
               <span>{contact.email}</span>
             </a>
           </div>
-          <div className="social-marks" aria-hidden="true">
-            <Facebook size={22} fill="currentColor" />
-            <Instagram size={22} />
-            <Linkedin size={22} fill="currentColor" />
-          </div>
         </div>
         <div className="footer-bottom">
           <div className="container">

@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:3000. Run `npm run typecheck` to check types and `npm run build` for the production static export in `out/`. Deploy that directory to a static web host. `next start` is not used with static exports.
+Open http://127.0.0.1:3000. Run `npm test` for the contact-form checks, `npm run typecheck` to check types, and `npm run build` for a production build. Run `npm start` to serve that build. Deploy to Vercel or a host that runs Next.js with Node.js and permits outbound SMTP on port 465. The contact form needs a running server; uploading `out/` to a static-only host will not support email delivery.
 
 ## Formatting
 
@@ -21,9 +21,26 @@ Run `npm run format` to format the project, or `npm run format:check` to check f
 - In-Home Care: services, memory support, 24-hour care, flexible care options
 - About Us: founder, story, values, caregiver qualifications
 - Careers: caregiving information and an email inquiry link
-- Contact: office information, directions, and a consultation email composer
+- Contact: office information, directions, and a consultation form that sends inquiries through Gmail
 
-The contact form validates input and prepares a message for the visitor to review and send in their own email application. It does not submit, store, or claim to deliver inquiries. Visitors can also copy their message. Connect a suitable email/form service if direct delivery is required. Careers inquiries likewise open an email draft.
+The contact form posts to `/api/contact/`. The server validates the fields, requires JSON requests from the configured site origin, caps the request body, checks a hidden spam field and Google reCAPTCHA v2, and sends a plain-text inquiry through Gmail SMTP over TLS. Success is shown only after SMTP accepts the message. Messages go to `CONTACT_TO`, defaulting to `contact.email` in `lib/content.ts` (currently `info@sisicarewa.com`); the visitor’s address is used only for Reply-To. Careers inquiries still open an email draft.
+
+## Gmail setup
+
+This follows the Steppe website’s SMTP environment settings and reCAPTCHA approach, adapted to the care-request fields. No credentials are copied from the reference project.
+
+1. Use a Gmail account with [2-Step Verification and an App Password](https://support.google.com/accounts/answer/185833). Some accounts restrict App Passwords.
+2. Copy `.env.example` to `.env.local`. Set `SMTP_USER` to the full Gmail sender address, `SMTP_PASSWORD` to its App Password, and `SMTP_FROM` to that same address (or leave it blank to use `SMTP_USER`). Never use the normal sign-in password or commit credentials.
+3. Keep `CONTACT_TO=info@sisicarewa.com` and set `SITE_ORIGIN` to the exact production HTTPS origin without a trailing slash. Localhost and 127.0.0.1 are also allowed automatically during development.
+4. Register a [Google reCAPTCHA v2 checkbox](https://www.google.com/recaptcha/admin/create) for the Sisi Care domain and `localhost`. Set `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` and its matching `RECAPTCHA_SECRET_KEY`. The public site key is embedded at build time, so rebuild after changing it. Use v2 siteverify-compatible keys, not v3 or Enterprise API keys.
+5. Add these environment settings to the Node.js host, build, and restart. Run `npm start` for production. The server must permit outbound TLS SMTP on port 465 and HTTPS to Google for CAPTCHA verification.
+6. Submit a test inquiry and check `info@sisicarewa.com`, including its spam folder. Local automated tests mock Google and SMTP and do not send real email. SMTP acceptance does not guarantee inbox delivery.
+
+The default transport uses [Gmail SMTP via Nodemailer](https://nodemailer.com/usage/using-gmail/) at `smtp.gmail.com:465`. `SMTP_HOST`, `SMTP_PORT`, and `SMTP_SECURE` use the same names as Steppe; port 587 with `SMTP_SECURE=false` requires STARTTLS. Keep `SMTP_FROM` to the Gmail account or an authorized sending alias. The visitor’s address is only Reply-To.
+
+Server credentials are read at request time, so builds need only the public CAPTCHA site key. Missing settings make the form unavailable and offer phone/email alternatives. Google [verifies the token and its hostname](https://developers.google.com/recaptcha/docs/verify) before SMTP is called. The widget resets after every attempt. Entered form details remain after a failure, and requests are not automatically retried because a lost SMTP response can leave delivery uncertain.
+
+Basic throttling allows three attempts per sender and 30 total attempts per ten-minute window per server process. It keeps only temporary hashed sender keys and counters. These counters reset after a restart and are not shared between serverless instances; configure hosting-level rate limits for production abuse protection. The application does not store submissions or log message contents/credentials. Gmail and the receiving mailbox retain sent mail according to their settings.
 
 ## Content and assets
 
