@@ -10,14 +10,7 @@ import {
   Car,
 } from 'lucide-react';
 
-export const contact = {
-  phone: '(206) 334-3505',
-  tel: '+12063343505',
-  email: 'info@sisicarewa.com',
-  address: '11522 84th Ave NE',
-  city: 'Kirkland, WA 98034',
-  maps: 'https://www.google.com/maps/search/?api=1&query=11522+84th+Ave+NE+Kirkland+WA+98034',
-};
+export { contact, areas } from './business';
 export const services = copy.home.services.map(([title, description], i) => ({
   id: [
     'personal-care',
@@ -90,4 +83,3 @@ export const inHomeCareServices = [
     ],
   },
 ];
-export const areas = ['Bellevue', 'Kirkland', 'Redmond', 'Sammamish', 'Issaquah'];

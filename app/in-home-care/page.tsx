@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+import { pageMetadata, pageGraph } from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
 import { Clock3, CalendarDays, Users, House } from 'lucide-react';
 import { InHomeCareHero } from '@/components/in-home-care-hero';
 import { IconBadge } from '@/components/icon-badge';
@@ -6,12 +7,13 @@ import { ReferenceImage } from '@/components/reference-image';
 import { CareLink, CheckList, ReferenceQuote } from '@/components/shared';
 import { inHomeCareServices } from '@/lib/content';
 import copy from '@/lib/prepared-content.json';
-export const metadata: Metadata = { title: 'In-Home Care', description: copy.care.description };
+export const metadata = pageMetadata('/in-home-care/');
 export default function InHomeCare() {
   const page = copy.care;
   const icons = [CalendarDays, CalendarDays, Users, House];
   return (
     <>
+      <StructuredData data={pageGraph('/in-home-care/')} />
       <InHomeCareHero />
       <section className="care-services" aria-labelledby="care-services-heading">
         <div className="container">

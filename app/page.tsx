@@ -1,3 +1,5 @@
+import { pageMetadata, pageGraph } from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
 import Link from 'next/link';
 import { IconBadge } from '@/components/icon-badge';
 import { HomeHero } from '@/components/home-hero';
@@ -6,9 +8,11 @@ import { HomeStory, GettingStarted } from '@/components/home-story';
 import { Testimonials } from '@/components/testimonials';
 import { services } from '@/lib/content';
 import copy from '@/lib/prepared-content.json';
+export const metadata = pageMetadata('/');
 export default function Home() {
   return (
     <>
+      <StructuredData data={pageGraph('/')} />
       <HomeHero />
       <section className="home-services">
         <div className="container">

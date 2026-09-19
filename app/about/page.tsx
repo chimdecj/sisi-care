@@ -1,5 +1,6 @@
+import { pageMetadata, pageGraph } from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
 import { HandwrittenNote } from '@/components/handwritten-note';
-import type { Metadata } from 'next';
 import {
   HeartHandshake,
   Heart,
@@ -17,13 +18,14 @@ import { CareCTA, TrustStrip, CheckList, ReferenceQuote } from '@/components/sha
 import { Testimonials } from '@/components/testimonials';
 import copy from '@/lib/prepared-content.json';
 import { IconBadge } from '@/components/icon-badge';
-export const metadata: Metadata = { title: 'About Us', description: copy.about.description };
+export const metadata = pageMetadata('/about/');
 export default function About() {
   const page = copy.about;
   const founderIcons = [Heart, GraduationCap, Users];
   const valueIcons = [HeartHandshake, Heart, ShieldCheck, Users];
   return (
     <>
+      <StructuredData data={pageGraph('/about/')} />
       <ReferenceHero variant="about" />
       <section className="about-overview">
         <div className="container about-overview-grid">

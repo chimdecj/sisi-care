@@ -16,7 +16,7 @@ export function BrandLogo({
       height={296}
       alt={`Sisi Care — ${copy.common.brandTagline}`}
       className={`brand-logo ${className}`}
-      priority={priority}
+      preload={priority}
       sizes="(max-width: 600px) 248px, 280px"
     />
   );

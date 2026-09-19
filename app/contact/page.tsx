@@ -1,5 +1,6 @@
+import { pageMetadata, pageGraph } from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
 import { HandwrittenNote } from '@/components/handwritten-note';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock3, ArrowRight, House, Users, Star } from 'lucide-react';
 import { ReferenceHero } from '@/components/reference-hero';
@@ -8,11 +9,12 @@ import { TrustStrip } from '@/components/shared';
 import { ContactForm } from '@/components/contact-form';
 import { contact } from '@/lib/content';
 import copy from '@/lib/prepared-content.json';
-export const metadata: Metadata = { title: 'Contact Us', description: copy.contact.description };
+export const metadata = pageMetadata('/contact/');
 export default function Contact() {
   const page = copy.contact;
   return (
     <>
+      <StructuredData data={pageGraph('/contact/')} />
       <ReferenceHero variant="contact" />
       <section className="contact-section" id="consultation">
         <div className="container contact-layout">

@@ -25,8 +25,8 @@ export function ReferenceImage({
       width={source.width}
       height={source.height}
       className={className}
-      priority={priority}
-      sizes={sizes}
+      preload={priority}
+      sizes={sizes ?? '(max-width: 760px) 100vw, 50vw'}
     />
   );
 }

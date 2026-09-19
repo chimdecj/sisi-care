@@ -1,5 +1,6 @@
+import { pageMetadata, pageGraph } from '@/lib/seo';
+import { StructuredData } from '@/components/structured-data';
 import { HandwrittenNote } from '@/components/handwritten-note';
-import type { Metadata } from 'next';
 import {
   HeartHandshake,
   Users,
@@ -23,7 +24,7 @@ import { ReferenceImage, type ReferenceAsset } from '@/components/reference-imag
 import { CheckList, ReferenceQuote } from '@/components/shared';
 import { contact } from '@/lib/content';
 import copy from '@/lib/prepared-content.json';
-export const metadata: Metadata = { title: 'Careers', description: copy.careers.description };
+export const metadata = pageMetadata('/careers/');
 export default function Careers() {
   const page = copy.careers;
   const duties = [UserRound, Heart, CookingPot, House, Accessibility, Pill, Brain, Clock3];
@@ -32,6 +33,7 @@ export default function Careers() {
   const applicationHref = `mailto:${contact.email}?subject=${encodeURIComponent('Caregiving opportunities at Sisi Care')}&body=${encodeURIComponent('Hello Sisi Care,\n\nI am interested in caregiving opportunities.\n\nMy name:\nPhone number:\nCaregiving experience:\nCredentials:\nAvailability:\n\nThank you!')}`;
   return (
     <>
+      <StructuredData data={pageGraph('/careers/')} />
       <ReferenceHero variant="careers" />
       <section className="benefits-section">
         <div className="container benefits-grid">
