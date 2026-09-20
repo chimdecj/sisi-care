@@ -9,7 +9,11 @@ npm install
 npm run dev
 ```
 
-Open http://127.0.0.1:3000. Run `npm test` for the contact-form and search metadata checks, `npm run typecheck` to check types, and `npm run build` for a production build. Run `npm start` to serve that build. Deploy to Vercel or a host that runs Next.js with Node.js and permits outbound SMTP on port 465. The contact form needs a running server; uploading `out/` to a static-only host will not support email delivery.
+Use Node.js 22 or 24. Open http://127.0.0.1:3000. Run `npm test` for the contact-form and search metadata checks, `npm run typecheck` to check types, and `npm run build` for a production build. Run `npm start` to serve that build through `server.js`. The contact form needs a running server; uploading `out/` to a static-only host will not support email delivery.
+
+## Namecheap Stellar deployment
+
+The project follows the Steppe website's cPanel Node.js deployment approach, with a `server.js` startup file and lower-memory production builds. Run `npm run deploy:package` to create `dist/sisi-care-namecheap.tar.gz`. Follow [DEPLOYMENT.md](DEPLOYMENT.md) for upload, cPanel settings, environment variables, build commands, and live checks. Hosting credentials are configured in cPanel and are not included in the archive.
 
 ## Formatting
 

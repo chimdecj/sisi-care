@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build",
+    "build": "next build --webpack",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "start": "next start",
+    "start": "node server.js",
+    "deploy:package": "node scripts/package-deployment.cjs",
     "test": "node --import tsx --conditions=react-server --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.0",
