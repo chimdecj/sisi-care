@@ -11,6 +11,7 @@ const files = [
   'lib',
   'public',
   'scripts/package-deployment.cjs',
+  'scripts/admin-password.cjs',
   'package.json',
   'package-lock.json',
   'next.config.ts',
@@ -19,6 +20,7 @@ const files = [
   'server.js',
   '.env.example',
   'DEPLOYMENT.md',
+  'CONTENT-EDITOR.md',
 ];
 const result = spawnSync(
   'tar',

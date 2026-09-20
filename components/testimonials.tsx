@@ -1,13 +1,14 @@
 import { ArrowRight, Quote, Star } from 'lucide-react';
 import { CustomerLetters } from './customer-letters';
-import copy from '@/lib/prepared-content.json';
-export function Testimonials({
+import { getContent } from '@/lib/cms/content';
+export async function Testimonials({
   showLetters = false,
   variant = 'home',
 }: {
   showLetters?: boolean;
   variant?: 'home' | 'about';
 }) {
+  const { copy } = await getContent();
   const page = copy[variant];
   return (
     <section className={`testimonials-section testimonials-${variant}`} id="family-stories">

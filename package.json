@@ -10,7 +10,9 @@
     "format:check": "prettier --check .",
     "start": "node server.js",
     "deploy:package": "node scripts/package-deployment.cjs",
-    "test": "node --import tsx --conditions=react-server --test tests/*.test.ts"
+    "test": "node --import tsx --conditions=react-server --test tests/*.test.ts",
+    "admin:password": "node scripts/admin-password.cjs",
+    "test:cms:live": "node tests/cms-live.cjs"
   },
   "engines": {
     "node": ">=22.0.0"
@@ -24,7 +26,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-google-recaptcha": "^3.1.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "sharp": "0.35.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",

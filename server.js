@@ -2,6 +2,7 @@
 process.env.NODE_ENV = 'production';
 const http = require('node:http');
 const next = require('next');
+const { stampClientAddress } = require('./lib/client-address.cjs');
 
 const port = Number(process.env.PORT || 3000);
 const app = next({ dev: false, dir: __dirname });
@@ -12,6 +13,7 @@ app
   .then(() => {
     http
       .createServer((req, res) => {
+        stampClientAddress(req);
         Promise.resolve(handle(req, res)).catch(() => {
           if (!res.headersSent) res.writeHead(500);
           res.end('Unable to load this page.');

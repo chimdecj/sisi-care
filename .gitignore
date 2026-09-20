@@ -12,3 +12,5 @@ dist/
 /pages/
 /owner.jpeg
 /*.docx
+
+.local-content/

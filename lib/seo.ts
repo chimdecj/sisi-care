@@ -76,7 +76,7 @@ export function pageMetadata(path: string): Metadata {
 export function areaServed() {
   return areas.map((name) => ({ '@type': 'City', name: `${name}, WA` }));
 }
-export function organizationGraph() {
+export function organizationGraph(serviceCopy?: string[][]) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -112,12 +112,12 @@ export function organizationGraph() {
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'In-Home Care Services',
-          itemListElement: services.map(({ id, title, description }) => ({
+          itemListElement: services.map(({ id, title, description }, i) => ({
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: title,
-              description,
+              name: serviceCopy?.[i][0] ?? title,
+              description: serviceCopy?.[i][1] ?? description,
               url: absoluteUrl(`/in-home-care/#${id}`),
               provider: { '@id': businessId },
             },

@@ -19,3 +19,5 @@ package-lock.json
 /pages/
 /owner.jpeg
 /*.docx
+
+.local-content/

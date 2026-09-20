@@ -1,9 +1,10 @@
 import { Heart, House, ShieldCheck, Users } from 'lucide-react';
 import { ReferenceImage } from './reference-image';
 import { CareLink } from './shared';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 
-export function InHomeCareHero() {
+export async function InHomeCareHero() {
+  const { copy } = await getContent();
   const icons = [House, Heart, Users, ShieldCheck];
   return (
     <section className="in-home-care-hero" aria-labelledby="in-home-care-heading">
@@ -19,7 +20,9 @@ export function InHomeCareHero() {
         <div className="page-hero-copy">
           <p className="eyebrow">{copy.care.eyebrow}</p>
           <h1 id="in-home-care-heading">
-            Compassionate Care<span>Right at Home</span>
+            {copy.care.title
+              .split(' Right ')
+              .map((line, i) => (i === 0 ? line : <span key={i}>Right {line}</span>))}
           </h1>
           <p className="page-hero-description">{copy.care.description}</p>
           <div className="page-hero-actions">

@@ -1,8 +1,9 @@
 import { Phone, Users, FileText, House } from 'lucide-react';
 import { CheckList, ReferenceQuote } from './shared';
 import { ReferenceImage } from './reference-image';
-import copy from '@/lib/prepared-content.json';
-export function HomeStory() {
+import { getContent } from '@/lib/cms/content';
+export async function HomeStory() {
+  const { copy } = await getContent();
   return (
     <section className="home-why">
       <div className="wide-container why-grid">
@@ -16,7 +17,8 @@ export function HomeStory() {
     </section>
   );
 }
-export function GettingStarted() {
+export async function GettingStarted() {
+  const { copy } = await getContent();
   const icons = [Phone, Users, FileText, House];
   return (
     <section className="process-section">

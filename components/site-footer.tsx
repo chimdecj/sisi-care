@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin } from 'lucide-react';
 import { BrandLogo } from './brand-logo';
 import { ServiceArea } from './service-area';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 
 const links = [
   ['/', 'Home'],
@@ -13,14 +13,15 @@ const links = [
   ['/contact/', 'Contact'],
 ];
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const { copy } = await getContent();
   return (
     <footer className="site-footer">
       <ServiceArea />
       <div className="footer">
         <div className="container footer-main">
           <Link href="/" className="footer-brand" aria-label="Sisi Care home">
-            <BrandLogo />
+            <BrandLogo tagline={copy.common.brandTagline} />
           </Link>
           <nav aria-label="Footer navigation">
             {links.map(([href, label]) => (

@@ -1,4 +1,5 @@
 import 'server-only';
+import { readContent } from './cms/storage';
 import { createHash } from 'node:crypto';
 import { sendContactEmail } from './contact-email';
 import { verifyContactCaptcha } from './contact-captcha';
@@ -81,7 +82,7 @@ export function createContactHandler(
       const body = await readBody(request);
       if (body === null) return failure(413, 'REQUEST_TOO_LARGE');
       const input = JSON.parse(body);
-      submission = parseContactSubmission(input);
+      submission = parseContactSubmission(input, (await readContent()).copy.contact);
       captchaToken = input?.captchaToken;
     } catch {
       return failure(400, 'INVALID_REQUEST');

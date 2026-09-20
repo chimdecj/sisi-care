@@ -292,6 +292,12 @@ select {
   object-fit: contain;
   object-position: right bottom;
 }
+@media (min-width: 601px) {
+  .reference-hero-careers .reference-hero-photo > img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
 .reference-hero-photo::before {
   content: '';
   position: absolute;

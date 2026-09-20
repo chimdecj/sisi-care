@@ -1,9 +1,11 @@
 import Image from 'next/image';
-import sources from '@/public/images/enhanced/sources.json';
+import { getContent } from '@/lib/cms/content';
+import type { ImageKey } from '@/lib/cms/schema';
+import careersHero from '@/public/images/enhenced-new/careers-hero-asia.jpg';
 
-export type ReferenceAsset = keyof typeof sources;
+export type ReferenceAsset = ImageKey;
 
-export function ReferenceImage({
+export async function ReferenceImage({
   name,
   alt,
   className,
@@ -16,14 +18,21 @@ export function ReferenceImage({
   priority?: boolean;
   sizes?: string;
 }) {
-  const source = sources[name];
+  const { images } = await getContent();
+  const source = images[name];
+  // Static imports include a content hash, so replacing this file refreshes its cache.
+  // Keep published admin uploads authoritative over the bundled photo.
+  const imageSource =
+    name === 'hero-careers' && source.src === '/images/enhenced-new/careers-hero-asia.jpg'
+      ? careersHero
+      : source;
 
   return (
     <Image
-      src={source.src}
+      src={imageSource.src}
       alt={alt}
-      width={source.width}
-      height={source.height}
+      width={imageSource.width}
+      height={imageSource.height}
       className={className}
       preload={priority}
       sizes={sizes ?? '(max-width: 760px) 100vw, 50vw'}

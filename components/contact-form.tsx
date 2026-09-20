@@ -3,10 +3,9 @@ import { useEffect, useState, useRef, type FormEvent } from 'react';
 import { ArrowRight, LockKeyhole, Check } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import type { Content } from '@/lib/cms/schema';
 
-export function ContactForm() {
-  const page = copy.contact;
+export function ContactForm({ page }: { page: Content['copy']['contact'] }) {
   const captcha = useRef<ReCAPTCHA>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;

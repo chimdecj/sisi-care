@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { HeartHandshake } from 'lucide-react';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 
-export function ServiceArea() {
+export async function ServiceArea() {
+  const { copy } = await getContent();
   return (
     <section className="service-area" id="service-area" aria-labelledby="service-area-heading">
       <picture className="service-area-background">

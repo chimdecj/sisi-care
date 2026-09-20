@@ -11,12 +11,12 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="eyebrow">{children}</p>;
 }
-export function CareLink({
-  children = copy.common.consultation,
+export async function CareLink({
+  children,
   href = '/contact/#consultation',
   secondary = false,
 }: {
@@ -24,9 +24,10 @@ export function CareLink({
   href?: string;
   secondary?: boolean;
 }) {
+  const { copy } = await getContent();
   return (
     <Link href={href} className={`button ${secondary ? 'button-secondary' : 'button-primary'}`}>
-      {children}
+      {children ?? copy.common.consultation}
       <ArrowRight size={17} aria-hidden="true" />
     </Link>
   );
@@ -52,13 +53,15 @@ export function ReferenceQuote({ quote, author }: { quote: string; author?: stri
     </blockquote>
   );
 }
-export function TrustStrip({
-  items = copy.home.trust,
+export async function TrustStrip({
+  items,
   icons = [CalendarDays, Heart, Users, ShieldCheck],
 }: {
   items?: string[][];
   icons?: LucideIcon[];
 }) {
+  const { copy } = await getContent();
+  items ??= copy.home.trust;
   return (
     <div className="trust-strip">
       <div className={`container trust-grid trust-grid-${items.length}`}>
@@ -78,7 +81,8 @@ export function TrustStrip({
     </div>
   );
 }
-export function CareCTA({ variant = 'home' }: { variant?: 'home' | 'about' }) {
+export async function CareCTA({ variant = 'home' }: { variant?: 'home' | 'about' }) {
+  const { copy } = await getContent();
   const page = copy[variant];
   return (
     <>

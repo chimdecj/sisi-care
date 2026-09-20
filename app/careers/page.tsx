@@ -23,9 +23,10 @@ import { ReferenceHero } from '@/components/reference-hero';
 import { ReferenceImage, type ReferenceAsset } from '@/components/reference-image';
 import { CheckList, ReferenceQuote } from '@/components/shared';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 export const metadata = pageMetadata('/careers/');
-export default function Careers() {
+export default async function Careers() {
+  const { copy } = await getContent();
   const page = copy.careers;
   const duties = [UserRound, Heart, CookingPot, House, Accessibility, Pill, Brain, Clock3];
   const benefits = [HeartHandshake, Users, CalendarDays, TrendingUp, House];

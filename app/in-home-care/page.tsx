@@ -6,9 +6,10 @@ import { IconBadge } from '@/components/icon-badge';
 import { ReferenceImage } from '@/components/reference-image';
 import { CareLink, CheckList, ReferenceQuote } from '@/components/shared';
 import { inHomeCareServices } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 export const metadata = pageMetadata('/in-home-care/');
-export default function InHomeCare() {
+export default async function InHomeCare() {
+  const { copy, careDetails } = await getContent();
   const page = copy.care;
   const icons = [CalendarDays, CalendarDays, Users, House];
   return (
@@ -22,14 +23,14 @@ export default function InHomeCare() {
             <p>{page.servicesDescription}</p>
           </div>
           <div className="care-detail-grid">
-            {inHomeCareServices.map(({ id, title, aliases, details, icon }) => (
+            {inHomeCareServices.map(({ id, aliases, icon }, i) => (
               <article className="care-detail" id={id} key={id}>
                 {aliases.map((alias) => (
                   <span className="care-anchor" id={alias} key={alias} aria-hidden="true" />
                 ))}
                 <IconBadge icon={icon} className="care-service-icon" />
-                <h3>{title}</h3>
-                <CheckList items={details} />
+                <h3>{careDetails[i].title}</h3>
+                <CheckList items={careDetails[i].details} />
               </article>
             ))}
           </div>

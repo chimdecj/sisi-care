@@ -2,9 +2,10 @@ import { CalendarDays, Heart, Phone, Users } from 'lucide-react';
 import { ReferenceImage } from './reference-image';
 import { CareLink } from './shared';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 
-export function HomeHero() {
+export async function HomeHero() {
+  const { copy } = await getContent();
   const icons = [CalendarDays, Heart, Users];
   return (
     <section className="home-hero" aria-labelledby="home-heading">
@@ -20,7 +21,9 @@ export function HomeHero() {
         <div className="page-hero-copy">
           <p className="eyebrow">{copy.home.eyebrow}</p>
           <h1 id="home-heading">
-            Trusted In-Home Care<span>for Over 12 Years</span>
+            {copy.home.title
+              .split(' for ')
+              .map((line, i) => (i === 0 ? line : <span key={i}>for {line}</span>))}
           </h1>
           <p className="page-hero-description">{copy.home.description}</p>
           <div className="page-hero-actions">

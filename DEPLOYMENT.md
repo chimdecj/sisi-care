@@ -97,7 +97,7 @@ shell. cPanel's runtime environment settings may not be inherited by Terminal.
 Replace the example public key before running:
 
 ```sh
-export NEXT_PUBLIC_RECAPTCHA_SITE_KEY='YOUR_SISI_CARE_PUBLIC_SITE_KEY'
+export NEXT_PUBLIC_RECAPTCHA_SITE_KEY='6LfZgsMtAAAAAKKIGRinlWjwTrq51vWhMPj5L66e'
 export SITE_INDEXABLE=true
 npm run build
 ```
@@ -131,3 +131,12 @@ Local checks cannot confirm the account's Passenger integration, DNS, HTTPS, or
 actual email delivery. Those must be verified after uploading.
 
 Official guide: [Namecheap Setup Node.js App](https://www.namecheap.com/support/knowledgebase/article.aspx/10047/2182/how-to-work-with-nodejs-app/).
+
+## Content editor
+
+The `/admin/` page lets your administrator edit all five pages' text and page
+photos. Follow [CONTENT-EDITOR.md](CONTENT-EDITOR.md) to generate login credentials
+and configure `CONTENT_DIR=/home/sisimjby/sisi-care-data`. Keep this private folder
+outside `sisi-care` and `public_html`, and preserve it across deployments.
+Build and restart once after installing the editor. Later publishing requires
+neither a rebuild nor a restart. Production login requires the supplied `server.js`.

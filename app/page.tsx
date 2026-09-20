@@ -7,9 +7,10 @@ import { CareCTA } from '@/components/shared';
 import { HomeStory, GettingStarted } from '@/components/home-story';
 import { Testimonials } from '@/components/testimonials';
 import { services } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 export const metadata = pageMetadata('/');
-export default function Home() {
+export default async function Home() {
+  const { copy } = await getContent();
   return (
     <>
       <StructuredData data={pageGraph('/')} />
@@ -23,11 +24,11 @@ export default function Home() {
             </div>
           </div>
           <div className="service-grid">
-            {services.map(({ id, title, description, icon }) => (
+            {services.map(({ id, icon }, i) => (
               <Link href={`/in-home-care/#${id}`} className="service-card" key={id}>
                 <IconBadge icon={icon} className="service-icon" />
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <h3>{copy.home.services[i][0]}</h3>
+                <p>{copy.home.services[i][1]}</p>
               </Link>
             ))}
           </div>

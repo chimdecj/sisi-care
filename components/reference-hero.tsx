@@ -11,14 +11,15 @@ import {
 import { ReferenceImage } from './reference-image';
 import { CareLink } from './shared';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 type PageName = 'about' | 'careers' | 'contact';
 const icons: Record<PageName, LucideIcon[]> = {
   about: [],
   careers: [Users, Heart, Sprout],
   contact: [],
 };
-export function ReferenceHero({ variant }: { variant: PageName }) {
+export async function ReferenceHero({ variant }: { variant: PageName }) {
+  const { copy } = await getContent();
   const page = copy[variant];
   const proof = variant === 'careers' ? copy.careers.trust : [];
   const title =
@@ -34,7 +35,7 @@ export function ReferenceHero({ variant }: { variant: PageName }) {
           name={variant === 'careers' ? 'hero-careers' : 'hero-home'}
           alt={
             variant === 'careers'
-              ? 'The Sisi Care team in navy uniforms, from the prepared Careers design'
+              ? 'Three smiling caregivers wearing navy Sisi Care uniforms'
               : 'A caregiver supporting an older woman at home, from the prepared page design'
           }
           priority

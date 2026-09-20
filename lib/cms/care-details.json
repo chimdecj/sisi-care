@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Personal Care",
+    "details": [
+      "Bathing, toileting, dressing",
+      "Personal hygiene",
+      "Routine skin care",
+      "Transfers and mobility help",
+      "Personal comfort and dignity"
+    ]
+  },
+  {
+    "title": "Home Helper Services",
+    "details": [
+      "Light housekeeping",
+      "Laundry and ironing",
+      "Plan and prepare meals",
+      "Monitor diet and eating",
+      "Care for houseplants",
+      "Organize and clean closets",
+      "Assist with pet care"
+    ]
+  },
+  {
+    "title": "Activity Support",
+    "details": [
+      "Arrange appointments",
+      "Assist with entertaining",
+      "Medical appointment trips",
+      "Errands and shopping",
+      "Trip to social events",
+      "Physical therapy exercise assistance"
+    ]
+  },
+  {
+    "title": "Health & Safety Support",
+    "details": [
+      "Medication reminders",
+      "Help with daily routines",
+      "Monitor diet and nutrition",
+      "Fall prevention",
+      "Mobility assistance",
+      "Companionship and supervision"
+    ]
+  }
+]

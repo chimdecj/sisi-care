@@ -18,7 +18,10 @@ export function isEmail(value: string): boolean {
   );
 }
 
-export function parseContactSubmission(value: unknown): ContactSubmission | null {
+export function parseContactSubmission(
+  value: unknown,
+  choices = copy.contact,
+): ContactSubmission | null {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
   const input = value as Record<string, unknown>;
   const field = (key: string, max: number, optional = false): string | null => {
@@ -47,11 +50,11 @@ export function parseContactSubmission(value: unknown): ContactSubmission | null
     !/^[+()\d .-]+$/.test(phone) ||
     phone.replace(/\D/g, '').length < 7 ||
     !isEmail(email) ||
-    !copy.contact.who.includes(who) ||
-    !copy.contact.when.includes(when) ||
+    !choices.who.includes(who) ||
+    !choices.when.includes(when) ||
     !Array.isArray(support) ||
-    support.length > copy.contact.support.length ||
-    !support.every((item) => typeof item === 'string' && copy.contact.support.includes(item)) ||
+    support.length > choices.support.length ||
+    !support.every((item) => typeof item === 'string' && choices.support.includes(item)) ||
     new Set(support).size !== support.length ||
     typeof message !== 'string' ||
     message.length > 1500 ||

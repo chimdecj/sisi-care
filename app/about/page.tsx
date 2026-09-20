@@ -16,10 +16,11 @@ import { ReferenceHero } from '@/components/reference-hero';
 import { ReferenceImage } from '@/components/reference-image';
 import { CareCTA, TrustStrip, CheckList, ReferenceQuote } from '@/components/shared';
 import { Testimonials } from '@/components/testimonials';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 import { IconBadge } from '@/components/icon-badge';
 export const metadata = pageMetadata('/about/');
-export default function About() {
+export default async function About() {
+  const { copy } = await getContent();
   const page = copy.about;
   const founderIcons = [Heart, GraduationCap, Users];
   const valueIcons = [HeartHandshake, Heart, ShieldCheck, Users];

@@ -8,9 +8,10 @@ import { ReferenceImage } from '@/components/reference-image';
 import { TrustStrip } from '@/components/shared';
 import { ContactForm } from '@/components/contact-form';
 import { contact } from '@/lib/content';
-import copy from '@/lib/prepared-content.json';
+import { getContent } from '@/lib/cms/content';
 export const metadata = pageMetadata('/contact/');
-export default function Contact() {
+export default async function Contact() {
+  const { copy } = await getContent();
   const page = copy.contact;
   return (
     <>
@@ -18,7 +19,7 @@ export default function Contact() {
       <ReferenceHero variant="contact" />
       <section className="contact-section" id="consultation">
         <div className="container contact-layout">
-          <ContactForm />
+          <ContactForm page={copy.contact} />
           <aside className="contact-aside">
             <div className="contact-card">
               <h2>{page.talkTitle}</h2>

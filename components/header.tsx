@@ -12,7 +12,7 @@ const links = [
   ['/careers/', 'Careers'],
   ['/contact/', 'Contact'],
 ];
-export function Header() {
+export function Header({ tagline }: { tagline: string }) {
   const path = usePathname() ?? '/';
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -31,7 +31,7 @@ export function Header() {
     <header className="site-header">
       <div className="container nav-inner">
         <Link href="/" className="brand" aria-label="Sisi Care home" onClick={() => setOpen(false)}>
-          <BrandLogo priority />
+          <BrandLogo priority tagline={tagline} />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map(([href, label]) => (

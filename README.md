@@ -61,3 +61,10 @@ The website uses the prepared bright pink, navy, burgundy, pale pink, and pale b
 ## Search setup
 
 Search metadata uses the confirmed public domain `https://sisicarewa.com`. Each existing page has its own title, description and canonical URL. The site includes business and service structured data, a sitemap, robots instructions and a branded sharing image. These improvements preserve the original visible page design and navigation. See [SEO-LAUNCH.md](SEO-LAUNCH.md) for deployment, verification and indexing steps, including staging settings and how Google selects sitelinks.
+
+## Admin content editor
+
+Visit `/admin/` to sign in and edit shared copy, all five pages, detailed care
+services, and page photos. Publishing updates the live server-rendered pages
+without a rebuild. See [CONTENT-EDITOR.md](CONTENT-EDITOR.md) for credentials,
+private persistent storage, backups, and Namecheap setup.
